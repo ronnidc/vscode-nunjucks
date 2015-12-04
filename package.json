@@ -1,0 +1,35 @@
+{
+	"name": "nunjucks",
+	"displayName": "Nunjucks",
+	"description": "A Nunjucks syntax definition",
+  "icon": "images/nunjucksIcon.png",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/ronnidc/vscode-nunjucks"
+	},
+	"galleryBanner": {
+		"color": "#203510",
+		"theme": "dark"	
+	},
+	"version": "0.0.1",
+	"publisher": "ronnidc",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "nunjucks",
+			"aliases": ["Nunjucks", "nunjucks"],
+			"extensions": [".nunjucks",".nunjs",".nj",".html",".htm","template",".tmpl",".tpl"],
+			"configuration": "./nunjucks.configuration.json"
+		}],
+		"grammars": [{
+			"language": "nunjucks",
+			"scopeName": "text.html.nunjucks",
+			"path": "./syntaxes/nunjucks.tmLanguage"
+		}]
+	}
+}
