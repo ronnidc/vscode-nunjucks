@@ -1,8 +1,8 @@
-#vscode-nunjucks
-A Nunjucks syntax definition specifically for **VS Code**.
+#Nunjucks for Visual Studio Code
+Nunjucks template syntax definition specifically for **Microsoft Visual Studio Code**.
 
-## Install nunjucks easy from the Command Palette in Visual Studio Code *(recomended)*
-To install the [nunjucks extension](https://marketplace.visualstudio.com/items/ronnidc.nunjucks) directly from Visual Studio Code you need to proceed with theese four simple steps:
+## Install Nunjucks from Visual Studio Code *(recomended method)*
+To install the [Nunjucks extension](https://marketplace.visualstudio.com/items/ronnidc.nunjucks) directly from Visual Studio Code you need to proceed with theese four simple steps:
 
 1. Go to *View > Command Palette* (Mac OSX: `cmd+shift+P`, Windows: `ctrl+shift+P`)
 2. Run the following command in the Command Palette field: `>ext install extension` and hit enter.
@@ -11,8 +11,8 @@ To install the [nunjucks extension](https://marketplace.visualstudio.com/items/r
 
 ![Install the Nunjucks extension from Code Command Palette](images/vscode-command-palette-nunjucks.png)
 
-## Or install the nunjucks extension for Visual Studio Code manually
-To install nunjucks manually in Visual Studio Code you need to proceed with theese five steps:
+## Or install the Nunjucks extension for Visual Studio Code manually
+To install Nunjucks manually in Visual Studio Code you need to proceed with theese five steps:
 
 1. Download this [vscode-nunjucks](https://github.com/ronnidc/vscode-nunjucks) repo from GitHub
 2. Navigate to the `<user home>/.vscode/extensions` directory on your computer.
