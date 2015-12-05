@@ -11,6 +11,9 @@
 		"color": "#203510",
 		"theme": "dark"	
 	},
+    "bugs": {
+        "url": "https://github.com/ronnidc/vscode-nunjucks/issues"
+    },
 	"version": "0.0.1",
 	"publisher": "ronnidc",
 	"engines": {
