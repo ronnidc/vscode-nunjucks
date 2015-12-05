@@ -1,6 +1,10 @@
 #Nunjucks for Visual Studio Code
 Nunjucks template syntax definition specifically for **Microsoft Visual Studio Code**.
 
+```
+>ext install extension nunjucks
+```
+
 ## Install Nunjucks from Visual Studio Code *(recomended method)*
 To install the [Nunjucks extension](https://marketplace.visualstudio.com/items/ronnidc.nunjucks) directly from Visual Studio Code you need to proceed with theese four simple steps:
 
