@@ -26,7 +26,7 @@
 		"languages": [{
 			"id": "nunjucks",
 			"aliases": ["Nunjucks", "nunjucks"],
-			"extensions": [".nunjucks",".nunjs",".nj",".html",".htm","template",".tmpl",".tpl"],
+			"extensions": [".nunjucks",".nunjs",".nunj",".nj",".html",".htm","template",".tmpl",".tpl"],
 			"configuration": "./nunjucks.configuration.json"
 		}],
 		"grammars": [{
