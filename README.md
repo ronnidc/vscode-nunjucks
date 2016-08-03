@@ -1,4 +1,4 @@
-#Nunjucks for Visual Studio Code
+# Nunjucks for Visual Studio Code
 Nunjucks template syntax definition specifically for **Microsoft Visual Studio Code**.
 
 ```
@@ -6,8 +6,12 @@ Nunjucks template syntax definition specifically for **Microsoft Visual Studio C
 ```
 ## vscode-nunjucks support these file extensions
 ```
-.nunjucks, .nunjs, .nj, .html, .htm, .template, .tmpl, .tpl
+.nunjucks, .nunjs, .nj, .njk, .html, .htm, .template, .tmpl, .tpl
 ```
+
+### Although you are free to use any file extension you wish for your Nunjucks template files, the Nunjucks community has adopted `.njk`
+<br />
+<br />
 
 ## Install Nunjucks from Visual Studio Code *(recomended method)*
 To install the [Nunjucks extension](https://marketplace.visualstudio.com/items/ronnidc.nunjucks) directly from Visual Studio Code you need to proceed with theese four simple steps:
@@ -15,7 +19,7 @@ To install the [Nunjucks extension](https://marketplace.visualstudio.com/items/r
 1. Go to *View > Command Palette* (Mac OSX: `cmd+shift+P`, Windows: `ctrl+shift+P`)
 2. Run the following command in the Command Palette field: `>ext install extension` and hit enter.
 3. Then type `nunjucks` and hit enter.
-4. After instalation is complete restart the Code app and you are all set up for start writing Nunjucks templates in Code.
+4. After instalation is complete restart the Code app and you are all set up for start writing Nunjucks templates in Visual Studio Code.
 
 ![Install the Nunjucks extension from Code Command Palette](images/vscode-command-palette-nunjucks.png)
 
