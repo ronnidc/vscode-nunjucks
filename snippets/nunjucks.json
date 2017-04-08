@@ -6,9 +6,15 @@
 	},
 	"extends": {
 		"prefix": "extends",
-		"body": "{% extends \"${1:template}\" %}\n",
+		"body": "{% extends \"${1:template}.njk\" %}",
 		"description": "Nunjucks Extends"
 	},
+		"include": {
+		"prefix": "include",
+		"body": "{% include \"${1:part}.njk\" %}",
+		"description": "Nunjucks Include"
+	},
+
 	"filter": {
 		"prefix": "filter",
 		"body": "{% filter ${1:filter} %}\n\t$2\n{% endfilter %}",
