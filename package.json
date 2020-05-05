@@ -1,63 +1,38 @@
 {
 	"name": "nunjucks",
 	"displayName": "Nunjucks",
-	"description": "A Nunjucks syntax definition + snippets",
-	"version": "0.3.0",
-	"publisher": "ronnidc",
-	"icon": "images/vscode-nunjucks-extension-logo.png",
-	"engines": {
-		"vscode": "^1.0.0"
-	},
-	"repository": {
+	"description": "A Nunjucks syntax definition",
+  "icon": "images/nunjucksIcon.png",
+  "repository": {
 		"type": "git",
 		"url": "https://github.com/ronnidc/vscode-nunjucks"
 	},
 	"galleryBanner": {
 		"color": "#203510",
-		"theme": "dark"
+		"theme": "dark"	
 	},
-	"bugs": {
-		"url": "https://github.com/ronnidc/vscode-nunjucks/issues"
+    "bugs": {
+        "url": "https://github.com/ronnidc/vscode-nunjucks/issues"
+    },
+	"version": "0.2.3",
+	"publisher": "ronnidc",
+	"engines": {
+		"vscode": "^0.10.1"
 	},
 	"categories": [
-		"Programming Languages"
+		"Languages"
 	],
 	"contributes": {
-		"languages": [
-			{
-				"id": "nunjucks",
-				"aliases": [
-					"Nunjucks",
-					"nunjucks"
-				],
-				"extensions": [
-					".nunjucks",
-					".nunjs",
-					".nunj",
-					".nj",
-					".njk",
-					".html",
-					".htm",
-					"template",
-					".tmpl",
-					".tpl"
-				],
-				"configuration": "./nunjucks.configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "nunjucks",
-				"scopeName": "text.html.nunjucks",
-				"path": "./syntaxes/nunjucks.tmLanguage"
-			}
-		],
-		"snippets": [
-			{
-				"language": "nunjucks",
-				"scopename": "text.html.nunjucks",
-				"path": "./snippets/nunjucks.json"
-			}
-		]
+		"languages": [{
+			"id": "nunjucks",
+			"aliases": ["Nunjucks", "nunjucks"],
+			"extensions": [".nunjucks",".nunjs",".nunj",".nj",".njk",".html",".htm","template",".tmpl",".tpl"],
+			"configuration": "./nunjucks.configuration.json"
+		}],
+		"grammars": [{
+			"language": "nunjucks",
+			"scopeName": "text.html.nunjucks",
+			"path": "./syntaxes/nunjucks.tmLanguage"
+		}]
 	}
 }
