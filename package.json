@@ -1,8 +1,13 @@
 {
 	"name": "nunjucks",
 	"displayName": "Nunjucks",
-	"description": "A Nunjucks syntax definition",
-	"icon": "images/nunjucksIcon.png",
+	"description": "A Nunjucks syntax definition + snippets",
+	"version": "0.3.0",
+	"publisher": "ronnidc",
+	"icon": "images/vscode-nunjucks-extension-logo.png",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ronnidc/vscode-nunjucks"
@@ -14,13 +19,8 @@
 	"bugs": {
 		"url": "https://github.com/ronnidc/vscode-nunjucks/issues"
 	},
-	"version": "0.2.3",
-	"publisher": "ronnidc",
-	"engines": {
-		"vscode": "^0.10.1"
-	},
 	"categories": [
-		"Languages"
+		"Programming Languages"
 	],
 	"contributes": {
 		"languages": [
