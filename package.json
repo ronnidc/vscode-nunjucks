@@ -2,7 +2,7 @@
 	"name": "nunjucks",
 	"displayName": "Nunjucks",
 	"description": "A Nunjucks syntax definition + snippets",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"publisher": "ronnidc",
 	"icon": "images/vscode-nunjucks-extension-logo.png",
 	"engines": {
@@ -32,15 +32,8 @@
 				],
 				"extensions": [
 					".nunjucks",
-					".nunjs",
-					".nunj",
 					".nj",
-					".njk",
-					".html",
-					".htm",
-					"template",
-					".tmpl",
-					".tpl"
+					".njk"
 				],
 				"configuration": "./nunjucks.configuration.json"
 			}

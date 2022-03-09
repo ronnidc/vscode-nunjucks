@@ -6,15 +6,9 @@
   <dict>
     <key>fileTypes</key>
     <array>
-      <string>nunjucks</string>
-      <string>nunjs</string>
       <string>nj</string>
       <string>njk</string>
-      <string>html</string>
-      <string>htm</string>
-      <string>template</string>
-      <string>tmpl</string>
-      <string>tpl</string>
+      <string>nunjucks</string>
     </array>
 
     <key>name</key>
