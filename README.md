@@ -17,7 +17,7 @@ Although you are free to use any file extension you wish for your Nunjucks templ
 * [Nunjucks by Mozilla](https://mozilla.github.io/nunjucks/)
 
 ### Credits
-This extension is based on the [Sublime-nunjucks](https://github.com/mogga/sublime-nunjucks) language file. Latest release is based on pullrequests from 
+This extension is based on the [Sublime-nunjucks](https://github.com/mogga/sublime-nunjucks) language file.
 
 ### Contributers
 [github.com/ronnidc/vscode-nunjucks/graphs/contributors](https://github.com/ronnidc/vscode-nunjucks/graphs/contributors)
