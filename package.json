@@ -4,6 +4,8 @@
 	"description": "A Nunjucks syntax definition + snippets",
 	"version": "0.3.1",
 	"publisher": "ronnidc",
+	"author": "ronnidc",
+	"license": "MIT",
 	"icon": "images/vscode-nunjucks-extension-logo.png",
 	"engines": {
 		"vscode": "^1.0.0"
