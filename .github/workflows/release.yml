@@ -33,7 +33,12 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
-        run: npx ovsx publish *.vsix
+        # The namespace must exist before the first publish. Creating it is
+        # idempotent enough: the command fails when it already exists, which
+        # is the normal case, so its exit code is ignored.
+        run: |
+          npx ovsx create-namespace ronnidc || true
+          npx ovsx publish *.vsix
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
       - name: GitHub release
