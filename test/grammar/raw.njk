@@ -1,0 +1,7 @@
+{% raw %}
+  <p>{{ not_an_expression }} {% not_a_tag %} {# not a comment #}</p>
+{% endraw %}
+{% verbatim %}
+  {{ also_not_parsed }}
+{% endverbatim %}
+{{ parsed_again }}

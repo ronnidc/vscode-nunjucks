@@ -1,0 +1,25 @@
+{{ title }}
+{{ page.data.title }}
+{{ user.name | upper }}
+{{ items | join(", ") | safe }}
+{{ value | default("fallback", true) }}
+{{ text | myCustomFilter(1, 2) }}
+{{ 'What if I\'m going to need a single quote?' }}
+{{ "escaped \"double\" quotes" }}
+{{ 42 + 3.14 * (2 - 1) // 2 % 3 ** 2 }}
+{{ a == b and c != d or not e }}
+{{ x in list }}
+{{ foo is defined }}
+{{ num is not divisibleby(3) }}
+{{ "yes" if ok else "no" }}
+{{ true }} {{ false }} {{ none }} {{ null }}
+{{ { key: "value", nested: { a: 1 } } }}
+{{ [1, 2, 3][0] }}
+{{ range(0, 5) }}
+{{ loop.index }}
+{{ caller() }}
+{{ super() }}
+{{ "a" ~ "b" }}
+{{ str | replace(r/foo/g, "bar") }}
+{{- trimmed -}}
+{{ myComponent.macro('argument') }}

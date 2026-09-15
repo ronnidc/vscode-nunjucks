@@ -1,0 +1,39 @@
+{% extends "layouts/base.njk" %}
+{% import "forms.njk" as forms %}
+{% from "forms.njk" import field, label as lbl %}
+{% include "partials/header.html" ignore missing %}
+{% include "partials/nav.njk" with context %}
+{% block content %}
+  {% if user.isAdmin %}
+    admin
+  {% elif user %}
+    user
+  {% else %}
+    guest
+  {% endif %}
+  {% for item in items %}
+    {{ loop.index }}: {{ item }}
+  {% else %}
+    empty
+  {% endfor %}
+  {% for key, value in object %}{{ key }}{% endfor %}
+  {% asyncEach item in items %}{{ item }}{% endeach %}
+  {% asyncAll item in items %}{{ item }}{% endall %}
+{% endblock content %}
+{% macro input(name, value="", type="text") %}
+  <input type="{{ type }}" name="{{ name }}" value="{{ value | escape }}">
+{% endmacro %}
+{% call input("username") %}
+  {{ caller() }}
+{% endcall %}
+{% filter title %}
+  shout it
+{% endfilter %}
+{% set greeting = "hello" %}
+{% set body %}
+  block assignment
+{% endset %}
+{%- set trimmed = 1 -%}
+{% image "cat.jpg", "A cat" %}
+{% mytag %}custom{% endmytag %}
+{%- if trimmed -%}whitespace{%- endif -%}

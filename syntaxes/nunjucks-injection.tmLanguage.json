@@ -1,0 +1,597 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Nunjucks (injection)",
+	"scopeName": "nunjucks.injection",
+	"injectionSelector": "L:text.html.nunjucks -comment.block.nunjucks -meta.embedded.block.raw.nunjucks -meta.embedded.block.frontmatter -meta.embedded.expression.nunjucks -meta.embedded.tag.nunjucks",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#raw"
+		},
+		{
+			"include": "#expression-block"
+		},
+		{
+			"include": "#tag-block"
+		},
+		{
+			"include": "#tag-macro"
+		},
+		{
+			"include": "#tag-filter"
+		},
+		{
+			"include": "#tag"
+		}
+	],
+	"repository": {
+		"comment": {
+			"name": "comment.block.nunjucks",
+			"begin": "\\{#-?",
+			"end": "-?#\\}",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.begin.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.end.nunjucks"
+				}
+			}
+		},
+		"raw": {
+			"comment": "Everything between raw/verbatim and its end tag is plain HTML. The injection selector excludes the content scope so no Nunjucks is matched inside.",
+			"begin": "(\\{%-?)\\s*(raw|verbatim)\\s*(-?%\\})",
+			"end": "(\\{%-?)\\s*(end\\2)\\s*(-?%\\})",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.control.raw.nunjucks"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.control.raw.nunjucks"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"contentName": "meta.embedded.block.raw.nunjucks",
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		},
+		"expression-block": {
+			"name": "meta.embedded.expression.nunjucks",
+			"begin": "(\\{\\{)(-)?",
+			"end": "(-)?(\\}\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.expression.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"2": {
+					"name": "punctuation.definition.expression.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"tag-block": {
+			"name": "meta.embedded.tag.nunjucks",
+			"begin": "(\\{%)(-)?\\s*(block|endblock)\\s+([A-Za-z_]\\w*)",
+			"end": "(-)?(%\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "keyword.control.block.nunjucks"
+				},
+				"4": {
+					"name": "entity.name.section.block.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"tag-macro": {
+			"name": "meta.embedded.tag.nunjucks",
+			"begin": "(\\{%)(-)?\\s*(macro)\\s+([A-Za-z_]\\w*)",
+			"end": "(-)?(%\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "keyword.control.macro.nunjucks"
+				},
+				"4": {
+					"name": "entity.name.function.macro.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#macro-parameters"
+				},
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"tag-filter": {
+			"name": "meta.embedded.tag.nunjucks",
+			"begin": "(\\{%)(-)?\\s*(filter)\\s+([A-Za-z_]\\w*)",
+			"end": "(-)?(%\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "keyword.control.filter.nunjucks"
+				},
+				"4": {
+					"patterns": [
+						{
+							"include": "#filter-name"
+						}
+					]
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"tag": {
+			"name": "meta.embedded.tag.nunjucks",
+			"begin": "(\\{%)(-)?\\s*([A-Za-z_]\\w*)?",
+			"end": "(-)?(%\\})",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"patterns": [
+						{
+							"match": "\\b(if|elif|else|endif)\\b",
+							"name": "keyword.control.conditional.nunjucks"
+						},
+						{
+							"match": "\\b(for|endfor|asyncEach|endeach|asyncAll|endall)\\b",
+							"name": "keyword.control.loop.nunjucks"
+						},
+						{
+							"match": "\\b(extends|include|import|from)\\b",
+							"name": "keyword.control.import.nunjucks"
+						},
+						{
+							"match": "\\b(block|endblock|macro|endmacro|call|endcall|filter|endfilter|set|endset|raw|endraw|verbatim|endverbatim)\\b",
+							"name": "keyword.control.nunjucks"
+						},
+						{
+							"comment": "Custom tags registered with addExtension, for example Eleventy shortcodes.",
+							"match": "[A-Za-z_]\\w*",
+							"name": "entity.name.tag.custom.nunjucks"
+						}
+					]
+				}
+			},
+			"endCaptures": {
+				"1": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"2": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"macro-parameters": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.begin.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.end.nunjucks"
+				}
+			},
+			"name": "meta.parameters.nunjucks",
+			"patterns": [
+				{
+					"match": "\\b([A-Za-z_]\\w*)\\b(?!\\s*\\()",
+					"name": "variable.parameter.nunjucks"
+				},
+				{
+					"include": "#expression"
+				}
+			]
+		},
+		"expression": {
+			"patterns": [
+				{
+					"include": "#string-double"
+				},
+				{
+					"include": "#string-single"
+				},
+				{
+					"include": "#regexp"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#constant"
+				},
+				{
+					"include": "#test"
+				},
+				{
+					"include": "#keyword"
+				},
+				{
+					"include": "#filter"
+				},
+				{
+					"include": "#operator"
+				},
+				{
+					"include": "#builtin"
+				},
+				{
+					"include": "#function-call"
+				},
+				{
+					"include": "#property"
+				},
+				{
+					"include": "#variable"
+				},
+				{
+					"include": "#brackets"
+				},
+				{
+					"include": "#punctuation"
+				}
+			]
+		},
+		"string-double": {
+			"name": "string.quoted.double.nunjucks",
+			"begin": "\"",
+			"end": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#string-escape"
+				}
+			]
+		},
+		"string-single": {
+			"name": "string.quoted.single.nunjucks",
+			"begin": "'",
+			"end": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#string-escape"
+				}
+			]
+		},
+		"string-escape": {
+			"match": "\\\\.",
+			"name": "constant.character.escape.nunjucks"
+		},
+		"regexp": {
+			"name": "string.regexp.nunjucks",
+			"begin": "\\br/",
+			"end": "/[gimy]*",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.nunjucks"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#string-escape"
+				}
+			]
+		},
+		"number": {
+			"match": "\\b\\d+(\\.\\d+)?\\b",
+			"name": "constant.numeric.nunjucks"
+		},
+		"constant": {
+			"match": "\\b(true|false|none|null|True|False|None)\\b",
+			"name": "constant.language.nunjucks"
+		},
+		"test": {
+			"match": "\\b(is)\\s+(?:(not)\\s+)?([A-Za-z_]\\w*)",
+			"captures": {
+				"1": {
+					"name": "keyword.operator.logical.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.logical.nunjucks"
+				},
+				"3": {
+					"patterns": [
+						{
+							"match": "\\b(callable|defined|divisibleby|escaped|equalto|eq|sameas|even|falsy|ge|greaterthan|gt|le|lessthan|lt|lower|ne|null|number|odd|string|truthy|undefined|upper|iterable|mapping)\\b",
+							"name": "support.function.test.nunjucks"
+						},
+						{
+							"match": "[A-Za-z_]\\w*",
+							"name": "entity.name.function.test.nunjucks"
+						}
+					]
+				}
+			}
+		},
+		"keyword": {
+			"patterns": [
+				{
+					"match": "\\b(and|or|not|in|is)\\b",
+					"name": "keyword.operator.logical.nunjucks"
+				},
+				{
+					"match": "\\b(if|else)\\b",
+					"name": "keyword.control.conditional.nunjucks"
+				},
+				{
+					"match": "\\b(import|as|ignore|missing|with|without|context)\\b",
+					"name": "keyword.control.import.nunjucks"
+				}
+			]
+		},
+		"filter": {
+			"match": "(\\|)\\s*([A-Za-z_]\\w*)",
+			"captures": {
+				"1": {
+					"name": "keyword.operator.pipe.nunjucks"
+				},
+				"2": {
+					"patterns": [
+						{
+							"include": "#filter-name"
+						}
+					]
+				}
+			}
+		},
+		"filter-name": {
+			"patterns": [
+				{
+					"match": "\\b(abs|batch|capitalize|center|default|d|dictsort|dump|escape|e|first|float|forceescape|groupby|indent|int|join|last|length|list|lower|nl2br|random|reject|rejectattr|replace|reverse|round|safe|select|selectattr|slice|sort|string|striptags|sum|title|trim|truncate|upper|urlencode|urlize|wordcount)\\b",
+					"name": "support.function.filter.nunjucks"
+				},
+				{
+					"match": "[A-Za-z_]\\w*",
+					"name": "entity.name.function.filter.nunjucks"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"match": "==|!=|<=|>=|<|>",
+					"name": "keyword.operator.comparison.nunjucks"
+				},
+				{
+					"match": "=",
+					"name": "keyword.operator.assignment.nunjucks"
+				},
+				{
+					"match": "\\*\\*|//|[+\\-*/%~]",
+					"name": "keyword.operator.arithmetic.nunjucks"
+				}
+			]
+		},
+		"builtin": {
+			"patterns": [
+				{
+					"match": "\\b(range|cycler|joiner|super|caller)\\b(?=\\s*\\()",
+					"name": "support.function.builtin.nunjucks"
+				},
+				{
+					"match": "\\b(loop|varargs|kwargs)\\b",
+					"name": "variable.language.nunjucks"
+				}
+			]
+		},
+		"function-call": {
+			"match": "\\b([A-Za-z_]\\w*)(?=\\s*\\()",
+			"name": "entity.name.function.nunjucks"
+		},
+		"property": {
+			"match": "(\\.)\\s*([A-Za-z_]\\w*)",
+			"captures": {
+				"1": {
+					"name": "punctuation.accessor.nunjucks"
+				},
+				"2": {
+					"name": "variable.other.property.nunjucks"
+				}
+			}
+		},
+		"variable": {
+			"match": "\\b[A-Za-z_]\\w*\\b",
+			"name": "variable.other.nunjucks"
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"begin": "\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.begin.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.end.nunjucks"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				{
+					"begin": "\\[",
+					"end": "\\]",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.brackets.begin.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.brackets.end.nunjucks"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				{
+					"comment": "Balanced braces so that a dict literal ending in }} does not close the expression early.",
+					"begin": "\\{",
+					"end": "\\}",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.braces.begin.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.braces.end.nunjucks"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"match": ",",
+					"name": "punctuation.separator.comma.nunjucks"
+				},
+				{
+					"match": ":",
+					"name": "punctuation.separator.key-value.nunjucks"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+>---
+#^^^ text.html.nunjucks punctuation.definition.frontmatter.begin.nunjucks
+>title: Hello world
+#^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.key.yaml string.unquoted.plain.yaml entity.name.tag.yaml
+#     ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml punctuation.separator.map.value.yaml
+#      ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml punctuation.whitespace.separator.yaml
+#       ^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml string.unquoted.plain.out.yaml
+>layout: layouts/post.njk
+#^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.key.yaml string.unquoted.plain.yaml entity.name.tag.yaml
+#      ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml punctuation.separator.map.value.yaml
+#       ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml punctuation.whitespace.separator.yaml
+#        ^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml string.unquoted.plain.out.yaml
+>tags:
+#^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.key.yaml string.unquoted.plain.yaml entity.name.tag.yaml
+#    ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml punctuation.separator.map.value.yaml
+>  - posts
+#^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.whitespace.indentation.yaml
+#  ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.definition.block.sequence.item.yaml
+#   ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.whitespace.separator.yaml
+#    ^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml string.unquoted.plain.out.yaml
+>  - {{ not_nunjucks }}
+#^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.whitespace.indentation.yaml
+#  ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.definition.block.sequence.item.yaml
+#   ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml punctuation.whitespace.separator.yaml
+#    ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml punctuation.definition.mapping.begin.yaml
+#     ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml meta.flow.mapping.yaml punctuation.definition.mapping.begin.yaml
+#      ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml meta.flow.mapping.yaml punctuation.whitespace.separator.yaml
+#       ^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml meta.flow.mapping.yaml meta.flow.map.implicit.yaml meta.flow.map.key.yaml string.unquoted.plain.in.yaml entity.name.tag.yaml
+#                   ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml meta.flow.mapping.yaml meta.flow.map.implicit.yaml punctuation.whitespace.separator.yaml
+#                    ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml meta.flow.mapping.yaml punctuation.definition.mapping.end.yaml
+#                     ^ text.html.nunjucks meta.embedded.block.frontmatter meta.stream.yaml meta.document.yaml meta.mapping.yaml meta.map.value.yaml meta.block.sequence.yaml meta.flow.mapping.yaml punctuation.definition.mapping.end.yaml
+>---
+#^^^ text.html.nunjucks punctuation.definition.frontmatter.end.nunjucks
+><h1>{{ title }}</h1>
+#^ text.html.nunjucks meta.tag.structure.h1.start.html punctuation.definition.tag.begin.html
+# ^^ text.html.nunjucks meta.tag.structure.h1.start.html entity.name.tag.html
+#   ^ text.html.nunjucks meta.tag.structure.h1.start.html punctuation.definition.tag.end.html
+#    ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#      ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#       ^^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#            ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#             ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#               ^^ text.html.nunjucks meta.tag.structure.h1.end.html punctuation.definition.tag.begin.html
+#                 ^^ text.html.nunjucks meta.tag.structure.h1.end.html entity.name.tag.html
+#                   ^ text.html.nunjucks meta.tag.structure.h1.end.html punctuation.definition.tag.end.html
+>

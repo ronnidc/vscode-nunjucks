@@ -1,0 +1,42 @@
+>{% raw %}
+#^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#  ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#   ^^^ text.html.nunjucks meta.embedded.tag.nunjucks keyword.control.raw.nunjucks
+#      ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#       ^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+>  <p>{{ not_an_expression }} {% not_a_tag %} {# not a comment #}</p>
+#^^ text.html.nunjucks meta.embedded.block.raw.nunjucks
+#  ^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.start.html punctuation.definition.tag.begin.html
+#   ^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.start.html entity.name.tag.html
+#    ^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.start.html punctuation.definition.tag.end.html
+#     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.raw.nunjucks
+#                                                                ^^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.end.html punctuation.definition.tag.begin.html
+#                                                                  ^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.end.html entity.name.tag.html
+#                                                                   ^ text.html.nunjucks meta.embedded.block.raw.nunjucks meta.tag.structure.p.end.html punctuation.definition.tag.end.html
+>{% endraw %}
+#^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#  ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#   ^^^^^^ text.html.nunjucks meta.embedded.tag.nunjucks keyword.control.raw.nunjucks
+#         ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#          ^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+>{% verbatim %}
+#^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#  ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#   ^^^^^^^^ text.html.nunjucks meta.embedded.tag.nunjucks keyword.control.raw.nunjucks
+#           ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#            ^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+>  {{ also_not_parsed }}
+#^^^^^^^^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.raw.nunjucks
+>{% endverbatim %}
+#^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#  ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#   ^^^^^^^^^^^ text.html.nunjucks meta.embedded.tag.nunjucks keyword.control.raw.nunjucks
+#              ^ text.html.nunjucks meta.embedded.tag.nunjucks
+#               ^^ text.html.nunjucks meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+>{{ parsed_again }}
+#^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#  ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#   ^^^^^^^^^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#               ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+>

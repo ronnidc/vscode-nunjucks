@@ -1,0 +1,53 @@
+>---js
+#^^^ text.html.nunjucks punctuation.definition.frontmatter.begin.nunjucks
+#   ^^ text.html.nunjucks keyword.other.frontmatter-language.nunjucks
+>{
+#^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js punctuation.definition.block.js
+>  title: "Hello",
+#^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js
+#  ^^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js entity.name.label.js
+#       ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js punctuation.separator.label.js
+#        ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js
+#         ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.quoted.double.js punctuation.definition.string.begin.js
+#          ^^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.quoted.double.js
+#               ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.quoted.double.js punctuation.definition.string.end.js
+#                ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js punctuation.separator.comma.js
+>  permalink: (data) => `/${data.page.fileSlug}/`
+#^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js
+#  ^^^^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js entity.name.label.js
+#           ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js punctuation.separator.label.js
+#            ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js
+#             ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js meta.parameters.js punctuation.definition.parameters.begin.js
+#              ^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js meta.parameters.js variable.parameter.js
+#                  ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js meta.parameters.js punctuation.definition.parameters.end.js
+#                   ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js
+#                    ^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js storage.type.function.arrow.js
+#                      ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js meta.arrow.js
+#                       ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js punctuation.definition.string.template.begin.js
+#                        ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js
+#                         ^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js
+#                           ^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.object.js
+#                               ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js punctuation.accessor.js
+#                                ^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.object.property.js
+#                                    ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js punctuation.accessor.js
+#                                     ^^^^^^^^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.property.js
+#                                             ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js
+#                                              ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js
+#                                               ^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js string.template.js punctuation.definition.string.template.end.js
+>}
+#^ text.html.nunjucks meta.embedded.block.frontmatter.javascript meta.block.js punctuation.definition.block.js
+>---
+#^^^ text.html.nunjucks punctuation.definition.frontmatter.end.nunjucks
+><h1>{{ title }}</h1>
+#^ text.html.nunjucks meta.tag.structure.h1.start.html punctuation.definition.tag.begin.html
+# ^^ text.html.nunjucks meta.tag.structure.h1.start.html entity.name.tag.html
+#   ^ text.html.nunjucks meta.tag.structure.h1.start.html punctuation.definition.tag.end.html
+#    ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#      ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#       ^^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#            ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#             ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#               ^^ text.html.nunjucks meta.tag.structure.h1.end.html punctuation.definition.tag.begin.html
+#                 ^^ text.html.nunjucks meta.tag.structure.h1.end.html entity.name.tag.html
+#                   ^ text.html.nunjucks meta.tag.structure.h1.end.html punctuation.definition.tag.end.html
+>

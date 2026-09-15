@@ -1,0 +1,307 @@
+><!DOCTYPE html>
+#^^ text.html.nunjucks meta.tag.metadata.doctype.html punctuation.definition.tag.begin.html
+#  ^^^^^^^ text.html.nunjucks meta.tag.metadata.doctype.html entity.name.tag.html
+#         ^ text.html.nunjucks meta.tag.metadata.doctype.html
+#          ^^^^ text.html.nunjucks meta.tag.metadata.doctype.html entity.other.attribute-name.html
+#              ^ text.html.nunjucks meta.tag.metadata.doctype.html punctuation.definition.tag.end.html
+><html lang="{{ lang | default('en') }}">
+#^ text.html.nunjucks meta.tag.structure.html.start.html punctuation.definition.tag.begin.html
+# ^^^^ text.html.nunjucks meta.tag.structure.html.start.html entity.name.tag.html
+#     ^ text.html.nunjucks meta.tag.structure.html.start.html
+#      ^^^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html entity.other.attribute-name.html
+#          ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html punctuation.separator.key-value.html
+#           ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html punctuation.definition.string.begin.html
+#            ^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#              ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks
+#               ^^^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                   ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                    ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks keyword.operator.pipe.nunjucks
+#                     ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                      ^^^^^^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks support.function.filter.nunjucks
+#                             ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.section.parens.begin.nunjucks
+#                              ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks string.quoted.single.nunjucks punctuation.definition.string.begin.nunjucks
+#                               ^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks string.quoted.single.nunjucks
+#                                 ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks string.quoted.single.nunjucks punctuation.definition.string.end.nunjucks
+#                                  ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.section.parens.end.nunjucks
+#                                   ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                                    ^^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                      ^ text.html.nunjucks meta.tag.structure.html.start.html meta.attribute.lang.html string.quoted.double.html punctuation.definition.string.end.html
+#                                       ^ text.html.nunjucks meta.tag.structure.html.start.html punctuation.definition.tag.end.html
+><head>
+#^ text.html.nunjucks meta.tag.structure.head.start.html punctuation.definition.tag.begin.html
+# ^^^^ text.html.nunjucks meta.tag.structure.head.start.html entity.name.tag.html
+#     ^ text.html.nunjucks meta.tag.structure.head.start.html punctuation.definition.tag.end.html
+>  <title>{{ title }} - {{ site.name }}</title>
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.metadata.title.start.html punctuation.definition.tag.begin.html
+#   ^^^^^ text.html.nunjucks meta.tag.metadata.title.start.html entity.name.tag.html
+#        ^ text.html.nunjucks meta.tag.metadata.title.start.html punctuation.definition.tag.end.html
+#         ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#           ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#            ^^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#                 ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                  ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                    ^^^ text.html.nunjucks
+#                       ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                         ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                          ^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#                              ^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.accessor.nunjucks
+#                               ^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.property.nunjucks
+#                                   ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                                    ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                      ^^ text.html.nunjucks meta.tag.metadata.title.end.html punctuation.definition.tag.begin.html
+#                                        ^^^^^ text.html.nunjucks meta.tag.metadata.title.end.html entity.name.tag.html
+#                                             ^ text.html.nunjucks meta.tag.metadata.title.end.html punctuation.definition.tag.end.html
+>  <style>
+#^^ text.html.nunjucks punctuation.whitespace.embedded.leading.html
+#  ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.start.html punctuation.definition.tag.begin.html
+#   ^^^^^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.start.html entity.name.tag.html
+#        ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.start.html punctuation.definition.tag.end.html
+>    .hero { background: {{ theme.color }}; color: red; }
+#^^^^ text.html.nunjucks meta.embedded.block.html source.css
+#    ^ text.html.nunjucks meta.embedded.block.html source.css meta.selector.css entity.other.attribute-name.class.css punctuation.definition.entity.css
+#     ^^^^ text.html.nunjucks meta.embedded.block.html source.css meta.selector.css entity.other.attribute-name.class.css
+#         ^ text.html.nunjucks meta.embedded.block.html source.css
+#          ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.section.property-list.begin.bracket.curly.css
+#           ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css
+#            ^^^^^^^^^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-name.css support.type.property-name.css
+#                      ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.separator.key-value.css
+#                       ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css
+#                        ^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                          ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks
+#                           ^^^^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks punctuation.accessor.nunjucks
+#                                 ^^^^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks variable.other.property.nunjucks
+#                                      ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks
+#                                       ^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                         ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.terminator.rule.css
+#                                          ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css
+#                                           ^^^^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-name.css support.type.property-name.css
+#                                                ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.separator.key-value.css
+#                                                 ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css
+#                                                  ^^^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css meta.property-value.css support.constant.color.w3c-standard-color-name.css
+#                                                     ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.terminator.rule.css
+#                                                      ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css
+#                                                       ^ text.html.nunjucks meta.embedded.block.html source.css meta.property-list.css punctuation.section.property-list.end.bracket.curly.css
+>  </style>
+#^^ text.html.nunjucks meta.embedded.block.html source.css
+#  ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.end.html punctuation.definition.tag.begin.html source.css-ignored-vscode
+#   ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.end.html punctuation.definition.tag.begin.html
+#    ^^^^^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.end.html entity.name.tag.html
+#         ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.style.end.html punctuation.definition.tag.end.html
+>  <script>
+#^^ text.html.nunjucks punctuation.whitespace.embedded.leading.html
+#  ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.start.html punctuation.definition.tag.begin.html
+#   ^^^^^^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.start.html entity.name.tag.html
+#         ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.start.html punctuation.definition.tag.end.html
+>    const data = {{ data | dump | safe }};
+#^^^^ text.html.nunjucks meta.embedded.block.html source.js
+#    ^^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js storage.type.js
+#         ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js
+#          ^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.var-single-variable.expr.js meta.definition.variable.js variable.other.constant.js
+#              ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.var-single-variable.expr.js
+#               ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js keyword.operator.assignment.js
+#                ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js
+#                 ^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                   ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                    ^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks variable.other.nunjucks
+#                        ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                         ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks keyword.operator.pipe.nunjucks
+#                          ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                           ^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks support.function.filter.nunjucks
+#                               ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                                ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks keyword.operator.pipe.nunjucks
+#                                 ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                                  ^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks support.function.filter.nunjucks
+#                                      ^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks
+#                                       ^^ text.html.nunjucks meta.embedded.block.html source.js meta.var.expr.js meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                         ^ text.html.nunjucks meta.embedded.block.html source.js punctuation.terminator.statement.js
+>    {% if debug %}console.log('{{ message }}');{% endif %}
+#^^^^ text.html.nunjucks meta.embedded.block.html source.js
+#    ^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#      ^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks
+#       ^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#         ^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks
+#          ^^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks variable.other.nunjucks
+#               ^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks
+#                ^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+#                  ^^^^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.function-call.js variable.other.object.js
+#                         ^ text.html.nunjucks meta.embedded.block.html source.js meta.function-call.js punctuation.accessor.js
+#                          ^^^ text.html.nunjucks meta.embedded.block.html source.js meta.function-call.js entity.name.function.js
+#                             ^ text.html.nunjucks meta.embedded.block.html source.js meta.brace.round.js
+#                              ^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js punctuation.definition.string.begin.js
+#                               ^^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                                 ^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js meta.embedded.expression.nunjucks
+#                                  ^^^^^^^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                         ^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js meta.embedded.expression.nunjucks
+#                                          ^^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                            ^ text.html.nunjucks meta.embedded.block.html source.js string.quoted.single.js punctuation.definition.string.end.js
+#                                             ^ text.html.nunjucks meta.embedded.block.html source.js meta.brace.round.js
+#                                              ^ text.html.nunjucks meta.embedded.block.html source.js punctuation.terminator.statement.js
+#                                               ^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#                                                 ^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks
+#                                                  ^^^^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#                                                       ^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks
+#                                                        ^^ text.html.nunjucks meta.embedded.block.html source.js meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+>    // {{ inside_a_js_comment }}
+#^^^^ text.html.nunjucks meta.embedded.block.html source.js punctuation.whitespace.comment.leading.js
+#    ^^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js punctuation.definition.comment.js
+#      ^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js
+#       ^^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#         ^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js meta.embedded.expression.nunjucks
+#          ^^^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js meta.embedded.expression.nunjucks variable.other.nunjucks
+#                             ^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js meta.embedded.expression.nunjucks
+#                              ^^ text.html.nunjucks meta.embedded.block.html source.js comment.line.double-slash.js meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+>  </script>
+#^^ text.html.nunjucks meta.embedded.block.html source.js
+#  ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.end.html punctuation.definition.tag.begin.html source.js-ignored-vscode
+#   ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.end.html punctuation.definition.tag.begin.html
+#    ^^^^^^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.end.html entity.name.tag.html
+#          ^ text.html.nunjucks meta.embedded.block.html meta.tag.metadata.script.end.html punctuation.definition.tag.end.html
+></head>
+#^^ text.html.nunjucks meta.tag.structure.head.end.html punctuation.definition.tag.begin.html
+#  ^^^^ text.html.nunjucks meta.tag.structure.head.end.html entity.name.tag.html
+#      ^ text.html.nunjucks meta.tag.structure.head.end.html punctuation.definition.tag.end.html
+><body>
+#^ text.html.nunjucks meta.tag.structure.body.start.html punctuation.definition.tag.begin.html
+# ^^^^ text.html.nunjucks meta.tag.structure.body.start.html entity.name.tag.html
+#     ^ text.html.nunjucks meta.tag.structure.body.start.html punctuation.definition.tag.end.html
+>  <a href="{{ url }}" class="link {% if active %}is-active{% endif %}">{{ label }}</a>
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.inline.a.start.html punctuation.definition.tag.begin.html
+#   ^ text.html.nunjucks meta.tag.inline.a.start.html entity.name.tag.html
+#    ^ text.html.nunjucks meta.tag.inline.a.start.html
+#     ^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html entity.other.attribute-name.html
+#         ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html punctuation.separator.key-value.html
+#          ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html punctuation.definition.string.begin.html
+#           ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#             ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html meta.embedded.expression.nunjucks
+#              ^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                 ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                  ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                    ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.href.html string.quoted.double.html punctuation.definition.string.end.html
+#                     ^ text.html.nunjucks meta.tag.inline.a.start.html
+#                      ^^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html entity.other.attribute-name.html
+#                           ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html punctuation.separator.key-value.html
+#                            ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html punctuation.definition.string.begin.html
+#                             ^^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html
+#                                  ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#                                    ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks
+#                                     ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#                                       ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks
+#                                        ^^^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks variable.other.nunjucks
+#                                              ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks
+#                                               ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+#                                                 ^^^^^^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html
+#                                                          ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#                                                            ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks
+#                                                             ^^^^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#                                                                  ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks
+#                                                                   ^^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+#                                                                     ^ text.html.nunjucks meta.tag.inline.a.start.html meta.attribute.class.html string.quoted.double.html punctuation.definition.string.end.html
+#                                                                      ^ text.html.nunjucks meta.tag.inline.a.start.html punctuation.definition.tag.end.html
+#                                                                       ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                                                                         ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                                                                          ^^^^^ text.html.nunjucks meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                                                               ^ text.html.nunjucks meta.embedded.expression.nunjucks
+#                                                                                ^^ text.html.nunjucks meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                                                                  ^^ text.html.nunjucks meta.tag.inline.a.end.html punctuation.definition.tag.begin.html
+#                                                                                    ^ text.html.nunjucks meta.tag.inline.a.end.html entity.name.tag.html
+#                                                                                     ^ text.html.nunjucks meta.tag.inline.a.end.html punctuation.definition.tag.end.html
+>  <div {% if hidden %}hidden{% endif %} data-id='{{ id }}'>content</div>
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.structure.div.start.html punctuation.definition.tag.begin.html
+#   ^^^ text.html.nunjucks meta.tag.structure.div.start.html entity.name.tag.html
+#      ^ text.html.nunjucks meta.tag.structure.div.start.html
+#       ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#         ^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks
+#          ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#            ^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks
+#             ^^^^^^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks variable.other.nunjucks
+#                   ^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks
+#                    ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+#                      ^^^^^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html entity.other.attribute-name.html
+#                            ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html meta.embedded.tag.nunjucks punctuation.definition.tag.begin.nunjucks
+#                              ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html meta.embedded.tag.nunjucks
+#                               ^^^^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html meta.embedded.tag.nunjucks keyword.control.conditional.nunjucks
+#                                    ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html meta.embedded.tag.nunjucks
+#                                     ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.hidden.html meta.embedded.tag.nunjucks punctuation.definition.tag.end.nunjucks
+#                                       ^ text.html.nunjucks meta.tag.structure.div.start.html
+#                                        ^^^^^^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html entity.other.attribute-name.html
+#                                               ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html punctuation.separator.key-value.html
+#                                                ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html punctuation.definition.string.begin.html
+#                                                 ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                                                   ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html meta.embedded.expression.nunjucks
+#                                                    ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                                      ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html meta.embedded.expression.nunjucks
+#                                                       ^^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                                         ^ text.html.nunjucks meta.tag.structure.div.start.html meta.attribute.data-x.data-id.html string.quoted.single.html punctuation.definition.string.end.html
+#                                                          ^ text.html.nunjucks meta.tag.structure.div.start.html punctuation.definition.tag.end.html
+#                                                           ^^^^^^^ text.html.nunjucks
+#                                                                  ^^ text.html.nunjucks meta.tag.structure.div.end.html punctuation.definition.tag.begin.html
+#                                                                    ^^^ text.html.nunjucks meta.tag.structure.div.end.html entity.name.tag.html
+#                                                                       ^ text.html.nunjucks meta.tag.structure.div.end.html punctuation.definition.tag.end.html
+>  <my-custom-element some-attribute="{{ value }}"></my-custom-element>
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.custom.start.html punctuation.definition.tag.begin.html
+#   ^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.tag.custom.start.html entity.name.tag.html
+#                    ^ text.html.nunjucks meta.tag.custom.start.html
+#                     ^^^^^^^^^^^^^^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html entity.other.attribute-name.html
+#                                   ^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html punctuation.separator.key-value.html
+#                                    ^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html punctuation.definition.string.begin.html
+#                                     ^^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                                       ^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                                        ^^^^^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                             ^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                                              ^^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                                ^ text.html.nunjucks meta.tag.custom.start.html meta.attribute.unrecognized.some-attribute.html string.quoted.double.html punctuation.definition.string.end.html
+#                                                 ^ text.html.nunjucks meta.tag.custom.start.html punctuation.definition.tag.end.html
+#                                                  ^^ text.html.nunjucks meta.tag.custom.end.html punctuation.definition.tag.begin.html
+#                                                    ^^^^^^^^^^^^^^^^^ text.html.nunjucks meta.tag.custom.end.html entity.name.tag.html
+#                                                                     ^ text.html.nunjucks meta.tag.custom.end.html punctuation.definition.tag.end.html
+>  <v-container></v-container>
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.custom.start.html punctuation.definition.tag.begin.html
+#   ^^^^^^^^^^^ text.html.nunjucks meta.tag.custom.start.html entity.name.tag.html
+#              ^ text.html.nunjucks meta.tag.custom.start.html punctuation.definition.tag.end.html
+#               ^^ text.html.nunjucks meta.tag.custom.end.html punctuation.definition.tag.begin.html
+#                 ^^^^^^^^^^^ text.html.nunjucks meta.tag.custom.end.html entity.name.tag.html
+#                            ^ text.html.nunjucks meta.tag.custom.end.html punctuation.definition.tag.end.html
+>  <img src="{{ image.src }}" alt="{{ image.alt }}">
+#^^ text.html.nunjucks
+#  ^ text.html.nunjucks meta.tag.object.img.void.html punctuation.definition.tag.begin.html
+#   ^^^ text.html.nunjucks meta.tag.object.img.void.html entity.name.tag.html
+#      ^ text.html.nunjucks meta.tag.object.img.void.html
+#       ^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html entity.other.attribute-name.html
+#          ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html punctuation.separator.key-value.html
+#           ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html punctuation.definition.string.begin.html
+#            ^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#              ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks
+#               ^^^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                    ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.accessor.nunjucks
+#                     ^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.property.nunjucks
+#                        ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                         ^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                           ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.src.html string.quoted.double.html punctuation.definition.string.end.html
+#                            ^ text.html.nunjucks meta.tag.object.img.void.html
+#                             ^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html entity.other.attribute-name.html
+#                                ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html punctuation.separator.key-value.html
+#                                 ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html punctuation.definition.string.begin.html
+#                                  ^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                                    ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                                     ^^^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                          ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.accessor.nunjucks
+#                                           ^^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks variable.other.property.nunjucks
+#                                              ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks
+#                                               ^^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                                 ^ text.html.nunjucks meta.tag.object.img.void.html meta.attribute.alt.html string.quoted.double.html punctuation.definition.string.end.html
+#                                                  ^ text.html.nunjucks meta.tag.object.img.void.html punctuation.definition.tag.end.html
+></body>
+#^^ text.html.nunjucks meta.tag.structure.body.end.html punctuation.definition.tag.begin.html
+#  ^^^^ text.html.nunjucks meta.tag.structure.body.end.html entity.name.tag.html
+#      ^ text.html.nunjucks meta.tag.structure.body.end.html punctuation.definition.tag.end.html
+></html>
+#^^ text.html.nunjucks meta.tag.structure.html.end.html punctuation.definition.tag.begin.html
+#  ^^^^ text.html.nunjucks meta.tag.structure.html.end.html entity.name.tag.html
+#      ^ text.html.nunjucks meta.tag.structure.html.end.html punctuation.definition.tag.end.html
+>

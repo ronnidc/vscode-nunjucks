@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Nunjucks",
+	"scopeName": "text.html.nunjucks",
+	"patterns": [
+		{
+			"include": "#frontmatter"
+		},
+		{
+			"include": "text.html.basic"
+		}
+	],
+	"repository": {
+		"frontmatter": {
+			"comment": "Front matter is only recognised on the first line of the file, like the Markdown grammar does it. Eleventy also allows ---js and ---json blocks.",
+			"patterns": [
+				{
+					"begin": "\\A(-{3})(js|javascript|node)\\s*$",
+					"end": "^(-{3})\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.begin.nunjucks"
+						},
+						"2": {
+							"name": "keyword.other.frontmatter-language.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.end.nunjucks"
+						}
+					},
+					"contentName": "meta.embedded.block.frontmatter.javascript",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				},
+				{
+					"begin": "\\A(-{3})(json)\\s*$",
+					"end": "^(-{3})\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.begin.nunjucks"
+						},
+						"2": {
+							"name": "keyword.other.frontmatter-language.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.end.nunjucks"
+						}
+					},
+					"contentName": "meta.embedded.block.frontmatter.json",
+					"patterns": [
+						{
+							"include": "source.json"
+						}
+					]
+				},
+				{
+					"begin": "\\A(-{3})\\s*$",
+					"end": "^(-{3}|\\.{3})\\s*$",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.begin.nunjucks"
+						}
+					},
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.frontmatter.end.nunjucks"
+						}
+					},
+					"contentName": "meta.embedded.block.frontmatter",
+					"patterns": [
+						{
+							"include": "source.yaml"
+						}
+					]
+				}
+			]
+		}
+	}
+}

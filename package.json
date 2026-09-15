@@ -1,26 +1,54 @@
 {
 	"name": "nunjucks",
 	"displayName": "Nunjucks",
-	"description": "A Nunjucks syntax definition + snippets",
-	"version": "0.3.1",
+	"description": "Nunjucks templates in VS Code: syntax highlighting, HTML IntelliSense, Emmet, formatting and snippets",
+	"version": "1.0.0",
 	"publisher": "ronnidc",
+	"license": "MIT",
 	"icon": "images/vscode-nunjucks-extension-logo.png",
 	"engines": {
-		"vscode": "^1.0.0"
+		"vscode": "^1.70.0"
 	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"keywords": [
+		"nunjucks",
+		"njk",
+		"eleventy",
+		"11ty",
+		"template",
+		"jinja",
+		"html"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ronnidc/vscode-nunjucks"
 	},
+	"bugs": {
+		"url": "https://github.com/ronnidc/vscode-nunjucks/issues"
+	},
+	"homepage": "https://github.com/ronnidc/vscode-nunjucks#readme",
+	"qna": "marketplace",
 	"galleryBanner": {
 		"color": "#203510",
 		"theme": "dark"
 	},
-	"bugs": {
-		"url": "https://github.com/ronnidc/vscode-nunjucks/issues"
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"virtualWorkspaces": true,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
 	},
-	"categories": [
-		"Programming Languages"
+	"main": "./src/extension.js",
+	"browser": "./src/extension.js",
+	"activationEvents": [
+		"onLanguage:nunjucks"
 	],
 	"contributes": {
 		"languages": [
@@ -28,29 +56,79 @@
 				"id": "nunjucks",
 				"aliases": [
 					"Nunjucks",
-					"nunjucks"
+					"njk"
 				],
 				"extensions": [
+					".njk",
 					".nunjucks",
-					".nj",
-					".njk"
+					".nunj",
+					".nj"
 				],
-				"configuration": "./nunjucks.configuration.json"
+				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
 			{
 				"language": "nunjucks",
 				"scopeName": "text.html.nunjucks",
-				"path": "./syntaxes/nunjucks.tmLanguage"
+				"path": "./syntaxes/nunjucks.tmLanguage.json",
+				"embeddedLanguages": {
+					"source.css": "css",
+					"source.js": "javascript",
+					"source.json": "json",
+					"meta.embedded.block.frontmatter": "yaml",
+					"meta.embedded.block.frontmatter.javascript": "javascript",
+					"meta.embedded.block.frontmatter.json": "json",
+					"meta.embedded.block.raw.nunjucks": "html"
+				}
+			},
+			{
+				"scopeName": "nunjucks.injection",
+				"path": "./syntaxes/nunjucks-injection.tmLanguage.json",
+				"injectTo": [
+					"text.html.nunjucks"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.raw.nunjucks": "html"
+				}
 			}
 		],
+		"htmlLanguageParticipants": [
+			{
+				"languageId": "nunjucks",
+				"autoInsert": true
+			}
+		],
+		"configurationDefaults": {
+			"emmet.includeLanguages": {
+				"nunjucks": "html"
+			},
+			"html.format.templating": true
+		},
 		"snippets": [
 			{
 				"language": "nunjucks",
-				"scopename": "text.html.nunjucks",
 				"path": "./snippets/nunjucks.json"
 			}
 		]
+	},
+	"scripts": {
+		"fetch-grammars": "node scripts/fetch-grammars.mjs",
+		"lint": "node scripts/lint.mjs && vsce ls",
+		"pretest": "npm run fetch-grammars",
+		"test": "npm run test:grammar && npm run test:integration",
+		"test:grammar": "node scripts/grammar-test.mjs",
+		"test:grammar:update": "npm run test:grammar -- --updateSnapshot",
+		"test:integration": "node test/integration/run.mjs",
+		"package": "vsce package",
+		"publish:vsce": "vsce publish",
+		"publish:ovsx": "ovsx publish"
+	},
+	"devDependencies": {
+		"@vscode/test-electron": "^3.1.0",
+		"@vscode/vsce": "^4.0.0",
+		"mocha": "^11.7.0",
+		"ovsx": "^1.2.0",
+		"vscode-tmgrammar-test": "^0.1.3"
 	}
 }

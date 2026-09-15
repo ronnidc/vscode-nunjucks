@@ -1,0 +1,36 @@
+>{# a single line comment #}
+#^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.begin.nunjucks
+#  ^^^^^^^^^^^^^^^^^^^^^^^ text.html.nunjucks comment.block.nunjucks
+#                         ^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.end.nunjucks
+>{#
+#^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.begin.nunjucks
+>  a multi-line comment with {{ braces }} and {% tags %} inside
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.html.nunjucks comment.block.nunjucks
+>#}
+#^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.end.nunjucks
+><p>{# inline #}text</p>
+#^ text.html.nunjucks meta.tag.structure.p.start.html punctuation.definition.tag.begin.html
+# ^ text.html.nunjucks meta.tag.structure.p.start.html entity.name.tag.html
+#  ^ text.html.nunjucks meta.tag.structure.p.start.html punctuation.definition.tag.end.html
+#   ^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.begin.nunjucks
+#     ^^^^^^^^ text.html.nunjucks comment.block.nunjucks
+#             ^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.end.nunjucks
+#               ^^^^ text.html.nunjucks
+#                   ^^ text.html.nunjucks meta.tag.structure.p.end.html punctuation.definition.tag.begin.html
+#                     ^ text.html.nunjucks meta.tag.structure.p.end.html entity.name.tag.html
+#                      ^ text.html.nunjucks meta.tag.structure.p.end.html punctuation.definition.tag.end.html
+>{#- whitespace controlled -#}
+#^^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.begin.nunjucks
+#   ^^^^^^^^^^^^^^^^^^^^^^^ text.html.nunjucks comment.block.nunjucks
+#                          ^^^ text.html.nunjucks comment.block.nunjucks punctuation.definition.comment.end.nunjucks
+><!-- html comment with {{ expression }} inside -->
+#^^^^ text.html.nunjucks comment.block.html punctuation.definition.comment.html
+#    ^^^^^^^^^^^^^^^^^^^ text.html.nunjucks comment.block.html
+#                       ^^ text.html.nunjucks comment.block.html meta.embedded.expression.nunjucks punctuation.definition.expression.begin.nunjucks
+#                         ^ text.html.nunjucks comment.block.html meta.embedded.expression.nunjucks
+#                          ^^^^^^^^^^ text.html.nunjucks comment.block.html meta.embedded.expression.nunjucks variable.other.nunjucks
+#                                    ^ text.html.nunjucks comment.block.html meta.embedded.expression.nunjucks
+#                                     ^^ text.html.nunjucks comment.block.html meta.embedded.expression.nunjucks punctuation.definition.expression.end.nunjucks
+#                                       ^^^^^^^^ text.html.nunjucks comment.block.html
+#                                               ^^^ text.html.nunjucks comment.block.html punctuation.definition.comment.html
+>
