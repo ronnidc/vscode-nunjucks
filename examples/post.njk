@@ -1,0 +1,27 @@
+---
+title: Why the extension was rewritten
+layout: layouts/base.njk
+---
+{% extends "layouts/base.njk" %}
+{% from "macros/card.njk" import card %}
+
+{% block content %}
+  <article class="post {% if featured %}post--featured{% endif %}">
+    <h1>{{ title | title }}</h1>
+    <time datetime="{{ page.date | date('yyyy-MM-dd') }}">{{ page.date }}</time>
+    {# Only render the intro when the author wrote one #}
+    {% if intro %}
+      <p class="lead">{{ intro | safe }}</p>
+    {% endif %}
+    {{ content | safe }}
+    {% set related = collections.posts | reverse | slice(0, 3) %}
+    {% for post in related %}
+      {{ card(post.data.title, post.url, loop.first) }}
+    {% else %}
+      <p>No related posts yet.</p>
+    {% endfor %}
+  </article>
+  <script>
+    const post = {{ { title: title, url: page.url } | dump | safe }};
+  </script>
+{% endblock %}

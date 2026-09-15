@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('en') }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}{% if site.name %} - {{ site.name }}{% endif %}</title>
+  <style>
+    :root { --accent: {{ theme.accent | default('#203510') }}; }
+  </style>
+</head>
+<body>
+  {% include "partials/nav.njk" ignore missing %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  {% raw %}
+    <p>{{ this is shown literally }}</p>
+  {% endraw %}
+</body>
+</html>

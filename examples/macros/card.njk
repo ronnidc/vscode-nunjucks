@@ -1,0 +1,5 @@
+{% macro card(title, url, highlighted=false) %}
+  <a class="card{% if highlighted %} card--highlighted{% endif %}" href="{{ url }}">
+    {{ title | truncate(60) }}
+  </a>
+{% endmacro %}

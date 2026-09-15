@@ -1,3 +1,12 @@
-images/nunjucksIcon_old.png
-vsc-extension-quickstart.md
+.github/**
+.vscode/**
+.claude/**
+test/**
+examples/**
+scripts/**
+node_modules/**
+package-lock.json
 .gitignore
+.vscodeignore
+CONTRIBUTING.md
+*.vsix
