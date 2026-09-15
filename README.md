@@ -94,6 +94,18 @@ Nunjucks is the most used template language in [Eleventy](https://www.11ty.dev/)
 
 Found something else? [Open an issue](https://github.com/ronnidc/vscode-nunjucks/issues/new/choose).
 
+## What's next
+
+Version 1.0 is a rewrite of the grammar and editor integration. Version 1.1 adds a small language layer on top, planned for the weeks after 1.0:
+
+- Syntax errors from the Nunjucks parser shown inline, tolerant of custom tags and shortcodes.
+- Go to definition for `{% extends %}`, `{% include %}` and `{% import %}` paths, with a setting for template folders such as `src/_includes`.
+- Hover documentation and completion for tags, filters and tests.
+- Folding of `{% block %}`, `{% if %}` and `{% for %}` pairs, and an outline of blocks and macros.
+- Custom tag delimiters ([#36](https://github.com/ronnidc/vscode-nunjucks/issues/36)) and Nunjucks inside JavaScript template literals ([#22](https://github.com/ronnidc/vscode-nunjucks/issues/22)).
+
+Follow the [issues](https://github.com/ronnidc/vscode-nunjucks/issues) and the [changelog](https://github.com/ronnidc/vscode-nunjucks/blob/main/CHANGELOG.md) for progress.
+
 ## Contributing
 
 Bug reports, feature requests and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/ronnidc/vscode-nunjucks/blob/main/CONTRIBUTING.md) for how to run the extension and its tests locally, and [CHANGELOG.md](https://github.com/ronnidc/vscode-nunjucks/blob/main/CHANGELOG.md) for what changed in each release.
