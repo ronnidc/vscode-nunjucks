@@ -16,6 +16,8 @@ There is no build step. Everything the extension does is declared in `package.js
 
 ## Running it locally
 
+Node 22 or newer is required for the scripts and tests, `.nvmrc` names the version CI uses.
+
 ```
 git clone https://github.com/ronnidc/vscode-nunjucks
 cd vscode-nunjucks

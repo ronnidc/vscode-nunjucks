@@ -10,3 +10,4 @@ package-lock.json
 .vscodeignore
 CONTRIBUTING.md
 *.vsix
+.nvmrc
