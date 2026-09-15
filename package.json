@@ -115,8 +115,8 @@
 	"scripts": {
 		"fetch-grammars": "node scripts/fetch-grammars.mjs",
 		"lint": "node scripts/lint.mjs && vsce ls",
-		"pretest": "npm run fetch-grammars",
 		"test": "npm run test:grammar && npm run test:integration",
+		"pretest:grammar": "npm run fetch-grammars",
 		"test:grammar": "node scripts/grammar-test.mjs",
 		"test:grammar:update": "npm run test:grammar -- --updateSnapshot",
 		"test:integration": "node test/integration/run.mjs",
