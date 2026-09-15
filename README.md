@@ -2,9 +2,9 @@
 
 Full editor support for [Nunjucks](https://mozilla.github.io/nunjucks/) templates: syntax highlighting, HTML IntelliSense, Emmet, formatting and snippets, in `.njk` files and in vscode.dev.
 
-[![Marketplace version](https://img.shields.io/visual-studio-marketplace/v/ronnidc.nunjucks?label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/ronnidc.nunjucks)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/ronnidc.nunjucks)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks&ssr=false#review-details)
+[![Marketplace version](https://vsmarketplacebadges.dev/version-short/ronnidc.nunjucks.svg?label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks)
+[![Installs](https://vsmarketplacebadges.dev/installs-short/ronnidc.nunjucks.svg)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks)
+[![Rating](https://vsmarketplacebadges.dev/rating-short/ronnidc.nunjucks.svg)](https://marketplace.visualstudio.com/items?itemName=ronnidc.nunjucks&ssr=false#review-details)
 [![Open VSX version](https://img.shields.io/open-vsx/v/ronnidc/nunjucks?label=Open%20VSX)](https://open-vsx.org/extension/ronnidc/nunjucks)
 [![CI](https://github.com/ronnidc/vscode-nunjucks/actions/workflows/ci.yml/badge.svg)](https://github.com/ronnidc/vscode-nunjucks/actions/workflows/ci.yml)
 
@@ -96,10 +96,10 @@ Found something else? [Open an issue](https://github.com/ronnidc/vscode-nunjucks
 
 ## Contributing
 
-Bug reports, feature requests and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/ronnidc/vscode-nunjucks/blob/master/CONTRIBUTING.md) for how to run the extension and its tests locally, and [CHANGELOG.md](https://github.com/ronnidc/vscode-nunjucks/blob/master/CHANGELOG.md) for what changed in each release.
+Bug reports, feature requests and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/ronnidc/vscode-nunjucks/blob/main/CONTRIBUTING.md) for how to run the extension and its tests locally, and [CHANGELOG.md](https://github.com/ronnidc/vscode-nunjucks/blob/main/CHANGELOG.md) for what changed in each release.
 
 ## Credits
 
 Versions 0.1 to 0.3 (2015 to 2022) were a port of the [Sublime-nunjucks](https://github.com/mogga/sublime-nunjucks) language file, Copyright (c) 2012-2015 Mogga, released under the BSD-2-Clause license. None of that code remains in 1.0, which was rewritten from scratch in 2026 on top of VS Code's own HTML grammar. Thanks to everyone who [contributed](https://github.com/ronnidc/vscode-nunjucks/graphs/contributors) or reported issues along the way.
 
-[MIT licensed](https://github.com/ronnidc/vscode-nunjucks/blob/master/LICENSE).
+[MIT licensed](https://github.com/ronnidc/vscode-nunjucks/blob/main/LICENSE).
