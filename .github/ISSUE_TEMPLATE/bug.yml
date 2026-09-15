@@ -1,0 +1,33 @@
+name: Bug report
+description: Something is highlighted, formatted or completed wrongly
+labels: [bug]
+body:
+  - type: textarea
+    id: template
+    attributes:
+      label: Template that shows the problem
+      description: The smallest Nunjucks snippet that reproduces it. Paste it as code, not as a screenshot, so it can go straight into a test.
+      render: nunjucks
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, and what happened instead
+      description: A screenshot is welcome here in addition to the description.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: VS Code and extension version
+      description: Help > About, and the version shown on the extension page.
+      placeholder: VS Code 1.104.0, Nunjucks 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Relevant settings
+      description: Anything in settings.json for `files.associations`, `emmet.*`, `html.format.*` or `[nunjucks]`.
+      render: json

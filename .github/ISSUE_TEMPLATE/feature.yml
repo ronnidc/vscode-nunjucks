@@ -1,0 +1,16 @@
+name: Feature request
+description: Something the extension should do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation in your templates, not only the feature you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: How should the extension help?
+      description: If another editor or extension already does this well, say which one.
