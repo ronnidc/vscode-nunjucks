@@ -2,6 +2,15 @@
 
 All notable changes to the Nunjucks extension are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Eleventy's `{% setAsync %}`, its paired core shortcodes (`renderTemplate`, `css`, `js`, `html`) and the `{% switch %}` tag fold and indent like Nunjucks block tags, and `setAsync` and `switch` are highlighted as keywords (#45).
+- CSS, JavaScript and Markdown highlighting inside `{% css %}`, `{% js %}` and `{% renderTemplate "md" %}`, with Nunjucks still highlighted and comment toggling following the embedded language (#46).
+- Eleventy's universal filters (`url`, `slugify`, `log`, `getCollectionItem` and friends, `inputPathToUrl`, `renderTransforms`, `renderContent`) are coloured like Nunjucks' built-in filters (#47).
+- Snippets for `setAsync`, `switch`, the Render and Bundle plugin shortcodes, generic shortcodes and YAML, `---js` and `---json` front matter (#48).
+
 ## [1.0.0] - 2026-09-15
 
 A rewrite. The original grammar was a port of a Django grammar with a copy of an old HTML grammar inside it, which is what broke HTML IntelliSense and most of the other things reported over the years. Version 1.0.0 replaces it with a Nunjucks grammar injected into VS Code's own HTML grammar and hooks the extension into VS Code's HTML language server.

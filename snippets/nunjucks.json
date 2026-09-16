@@ -133,5 +133,70 @@
 		"prefix": "loop",
 		"body": ["loop.${1|index,index0,revindex,revindex0,first,last,length|}"],
 		"description": "loop variable inside a for block"
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": ["{% switch ${1:value} %}", "\t{% case ${2:match} %}", "\t\t$0", "\t{% default %}", "\t\t", "{% endswitch %}"],
+		"description": "switch block with case and default branches"
+	},
+	"setAsync": {
+		"prefix": "setAsync",
+		"body": ["{% setAsync \"${1:name}\" %}", "\t$0", "{% endsetAsync %}"],
+		"description": "Eleventy: set a variable to the rendered block content, works with async shortcodes"
+	},
+	"renderTemplate": {
+		"prefix": "renderTemplate",
+		"body": ["{% renderTemplate \"${1|md,njk,liquid,html|}\" %}", "\t$0", "{% endrenderTemplate %}"],
+		"description": "Eleventy: render the block in another template language"
+	},
+	"renderFile": {
+		"prefix": "renderFile",
+		"body": ["{% renderFile \"${1:./_includes/file.md}\" %}"],
+		"description": "Eleventy: render a file in the language of its extension"
+	},
+	"css": {
+		"prefix": "css",
+		"body": ["{% css %}", "\t$0", "{% endcss %}"],
+		"description": "Eleventy: add CSS to the css bundle"
+	},
+	"js": {
+		"prefix": "js",
+		"body": ["{% js %}", "\t$0", "{% endjs %}"],
+		"description": "Eleventy: add JavaScript to the js bundle"
+	},
+	"getBundle": {
+		"prefix": "getBundle",
+		"body": ["{% getBundle \"${1|css,js,html|}\" %}"],
+		"description": "Eleventy: output the content of a bundle inline"
+	},
+	"getBundleFileUrl": {
+		"prefix": "getBundleFileUrl",
+		"body": ["{% getBundleFileUrl \"${1|css,js,html|}\" %}"],
+		"description": "Eleventy: output the URL of a bundle written to a file"
+	},
+	"shortcode": {
+		"prefix": "shortcode",
+		"body": ["{% ${1:name} ${2:args} %}"],
+		"description": "shortcode or other custom tag with arguments"
+	},
+	"paired shortcode": {
+		"prefix": "pairedshortcode",
+		"body": ["{% ${1:name} %}", "\t$0", "{% end$1 %}"],
+		"description": "paired shortcode with its end tag"
+	},
+	"front matter": {
+		"prefix": "frontmatter",
+		"body": ["---", "${1:title}: ${2:value}", "---", "$0"],
+		"description": "YAML front matter block"
+	},
+	"front matter js": {
+		"prefix": "frontmatterjs",
+		"body": ["---js", "{", "\t${1:title}: ${2:value}", "}", "---", "$0"],
+		"description": "JavaScript front matter block"
+	},
+	"front matter json": {
+		"prefix": "frontmatterjson",
+		"body": ["---json", "{", "\t\"${1:title}\": \"${2:value}\"", "}", "---", "$0"],
+		"description": "JSON front matter block"
 	}
 }
