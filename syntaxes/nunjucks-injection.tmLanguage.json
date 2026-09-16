@@ -721,6 +721,11 @@
 					"name": "support.function.filter.nunjucks"
 				},
 				{
+					"comment": "Eleventy's universal filters and the Render plugin's renderContent, available in every Nunjucks template of an Eleventy project.",
+					"match": "\\b(url|slugify|slug|log|getCollectionItem|getPreviousCollectionItem|getNextCollectionItem|inputPathToUrl|renderTransforms|renderContent)\\b",
+					"name": "support.function.filter.eleventy.nunjucks"
+				},
+				{
 					"match": "[A-Za-z_]\\w*",
 					"name": "entity.name.function.filter.nunjucks"
 				}

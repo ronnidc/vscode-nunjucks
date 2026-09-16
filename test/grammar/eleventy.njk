@@ -24,4 +24,8 @@
 {% getBundle "css" %}
 {% getBundleFileUrl "js", "defer" %}
 {% html "head" %}<meta name="x" content="{{ x }}">{% endhtml %}
+<a href="{{ '/about/' | url }}">{{ title | slugify }}</a>
+{{ collections.posts | getNextCollectionItem(page) | log }}
+{{ content | renderContent("njk", data) | renderTransforms | safe }}
+{{ page.inputPath | inputPathToUrl }} {{ name | myOwnFilter }}
 {% endcss %}
