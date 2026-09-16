@@ -1,0 +1,31 @@
+{% css %}
+  .hero { color: {{ theme.color }}; }
+{% endcss %}
+{% css "defer" %}.later { display: none; }{% endcss %}
+{% js %}
+  console.log("{{ title }}");
+{% endjs %}
+{%- js "async" -%}
+  const data = {{ title | dump | safe }};
+{%- endjs -%}
+{% renderTemplate "md" %}
+# {{ title }}
+
+* first item
+* second item
+{% endrenderTemplate %}
+{% renderTemplate 'njk,md', data %}
+## still markdown
+{% endrenderTemplate %}
+{% renderTemplate "liquid", data %}
+<p>{{ still_html }}</p>
+{% endrenderTemplate %}
+{% renderFile "./_includes/post.md", data, "njk" %}
+{% getBundle "css" %}
+{% getBundleFileUrl "js", "defer" %}
+{% html "head" %}<meta name="x" content="{{ x }}">{% endhtml %}
+<a href="{{ '/about/' | url }}">{{ title | slugify }}</a>
+{{ collections.posts | getNextCollectionItem(page) | log }}
+{{ content | renderContent("njk", data) | renderTransforms | safe }}
+{{ page.inputPath | inputPathToUrl }} {{ name | myOwnFilter }}
+{% endcss %}

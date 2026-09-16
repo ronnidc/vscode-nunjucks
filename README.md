@@ -77,10 +77,21 @@ Everything else is inherited from your HTML settings. For example, to format Nun
 | `raw`, `verbatim` | blocks that are not parsed as Nunjucks |
 | `comment`, `commentblock` | `{# #}` on one or several lines |
 | `var`, `super`, `caller`, `loop` | `{{ }}`, `{{ super() }}`, `{{ caller() }}` and `loop.` properties |
+| `switch` | `{% switch %}` block with `{% case %}` and `{% default %}` branches |
+| `shortcode`, `pairedshortcode` | a custom tag with arguments, and a paired one with its end tag |
+| `frontmatter`, `frontmatterjs`, `frontmatterjson` | a YAML, `---js` or `---json` front matter block |
+| `setAsync`, `renderTemplate`, `renderFile`, `css`, `js`, `getBundle`, `getBundleFileUrl` | Eleventy's own tag and the shortcodes of its Render and Bundle plugins |
 
 ## Using it with Eleventy
 
-Nunjucks is the most used template language in [Eleventy](https://www.11ty.dev/), and the extension is tested against Eleventy style templates: front matter at the top, `{% extends %}` layouts, `{% include %}` partials and shortcodes. Shortcodes and other custom tags are highlighted as tags even though the extension cannot know their names.
+Nunjucks is the most used template language in [Eleventy](https://www.11ty.dev/), and the extension knows the syntax Eleventy adds on top of Nunjucks:
+
+- `{% setAsync %}` is highlighted as a keyword and folds and indents like `{% set %}`.
+- The paired shortcodes in Eleventy core fold and indent too: `{% renderTemplate %}` from the [Render plugin](https://www.11ty.dev/docs/plugins/render/) and `{% css %}`, `{% js %}` and `{% html %}` from the [Bundle plugin](https://www.11ty.dev/docs/plugins/bundle/). Inside `{% css %}` and `{% js %}` you get CSS and JavaScript highlighting and comment toggling, and the body of `{% renderTemplate "md" %}` is highlighted as Markdown.
+- Eleventy's [universal filters](https://www.11ty.dev/docs/filters/) such as `url`, `slugify`, `log` and `getCollectionItem` are coloured like Nunjucks' built-in filters.
+- Snippets for all of the above, see the table.
+
+Other shortcodes and custom tags are highlighted as tags even though the extension cannot know their names. Paired shortcodes you define yourself do not fold or indent yet, see What's next.
 
 ## Troubleshooting
 
@@ -102,6 +113,7 @@ Version 1.0 is a rewrite of the grammar and editor integration. Version 1.1 adds
 - Go to definition for `{% extends %}`, `{% include %}` and `{% import %}` paths, with a setting for template folders such as `src/_includes`.
 - Hover documentation and completion for tags, filters and tests.
 - Folding of `{% block %}`, `{% if %}` and `{% for %}` pairs, and an outline of blocks and macros.
+- A setting that names your own paired shortcodes, so they fold and indent like the built-in ones.
 - Custom tag delimiters ([#36](https://github.com/ronnidc/vscode-nunjucks/issues/36)) and Nunjucks inside JavaScript template literals ([#22](https://github.com/ronnidc/vscode-nunjucks/issues/22)).
 
 Follow the [issues](https://github.com/ronnidc/vscode-nunjucks/issues) and the [changelog](https://github.com/ronnidc/vscode-nunjucks/blob/main/CHANGELOG.md) for progress.

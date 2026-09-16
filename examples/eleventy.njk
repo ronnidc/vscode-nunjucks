@@ -1,0 +1,31 @@
+---
+title: Eleventy syntax
+layout: layouts/base.njk
+---
+{% css %}
+  .hero { color: {{ theme.color | default("rebeccapurple") }}; }
+{% endcss %}
+{% js "defer" %}
+  console.log("{{ title }}");
+{% endjs %}
+
+{% setAsync "intro" %}
+  {% renderFile "./_includes/intro.md" %}
+{% endsetAsync %}
+
+<h1 id="{{ title | slugify }}">{{ title }}</h1>
+{{ intro | safe }}
+
+{% renderTemplate "md" %}
+## Written in Markdown
+
+* Eleventy renders this block with markdown-it.
+* Nunjucks still works here: {{ page.url | url }}.
+{% endrenderTemplate %}
+
+{% switch page.fileSlug %}
+  {% case "about" %}
+    <p>About page</p>
+  {% default %}
+    <p>{{ collections.posts | length }} posts</p>
+{% endswitch %}

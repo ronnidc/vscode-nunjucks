@@ -165,6 +165,18 @@ describe("Nunjucks language support", function () {
 		assert.ok(editor.selection.active.character > 0, "expected an indented cursor");
 	});
 
+	it("indents on Enter between Eleventy's setAsync tags (#45)", async () => {
+		const { document, editor } = await openNunjucks('{% setAsync "x" %}{% endsetAsync %}');
+		placeCursor(editor, 0, 18);
+		await type("\n");
+		assert.deepStrictEqual(
+			document.getText().split("\n").map((line) => line.replace(/\s+$/, "")),
+			['{% setAsync "x" %}', "", "{% endsetAsync %}"],
+		);
+		assert.strictEqual(editor.selection.active.line, 1);
+		assert.ok(editor.selection.active.character > 0, "expected an indented cursor");
+	});
+
 	it("keeps template tags and comments intact when formatting (#12)", async () => {
 		const { document, editor } = await openNunjucks(
 			"{% extends 'base.njk' %}\n{# a comment\n   over two lines #}\n{% block content %}\n<ul>\n<li>{{ item }}</li>\n</ul>\n{% endblock %}\n",
