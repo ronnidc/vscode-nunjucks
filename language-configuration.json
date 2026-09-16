@@ -35,8 +35,8 @@
 	"colorizedBracketPairs": [],
 	"folding": {
 		"markers": {
-			"start": "^\\s*(<!--\\s*#region\\b.*-->|\\{%-?\\s*(if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll)\\b(?!.*\\{%-?\\s*end)|\\{%-?\\s*set\\s+\\w+\\s*-?%\\})",
-			"end": "^\\s*(<!--\\s*#endregion\\b.*-->|\\{%-?\\s*end(if|for|block|macro|call|filter|raw|verbatim|each|all|set)\\b)"
+			"start": "^\\s*(<!--\\s*#region\\b.*-->|\\{%-?\\s*(if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|switch|setAsync|renderTemplate|css|js|html)\\b(?!.*\\{%-?\\s*end)|\\{%-?\\s*set\\s+\\w+\\s*-?%\\})",
+			"end": "^\\s*(<!--\\s*#endregion\\b.*-->|\\{%-?\\s*end(if|for|block|macro|call|filter|raw|verbatim|each|all|set|switch|setAsync|renderTemplate|css|js|html)\\b)"
 		}
 	},
 	"wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\$\\^\\&\\*\\(\\)\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\s]+)",
@@ -65,10 +65,10 @@
 		},
 		{
 			"beforeText": {
-				"pattern": "\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|else|elif|set\\s+\\w+\\s*-?%\\})\\b(?:(?!\\{%-?\\s*end).)*$"
+				"pattern": "\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|switch|case|default|setAsync|renderTemplate|css|js|html|else|elif|set\\s+\\w+\\s*-?%\\})\\b(?:(?!\\{%-?\\s*end).)*$"
 			},
 			"afterText": {
-				"pattern": "^\\s*\\{%-?\\s*(?:end\\w+|else|elif)\\b"
+				"pattern": "^\\s*\\{%-?\\s*(?:end\\w+|else|elif|case|default)\\b"
 			},
 			"action": {
 				"indent": "indentOutdent"
@@ -76,7 +76,7 @@
 		},
 		{
 			"beforeText": {
-				"pattern": "\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|else|elif|set\\s+\\w+\\s*-?%\\})\\b(?:(?!\\{%-?\\s*end).)*$"
+				"pattern": "\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|switch|case|default|setAsync|renderTemplate|css|js|html|else|elif|set\\s+\\w+\\s*-?%\\})\\b(?:(?!\\{%-?\\s*end).)*$"
 			},
 			"action": {
 				"indent": "indent"
@@ -84,7 +84,7 @@
 		}
 	],
 	"indentationRules": {
-		"increaseIndentPattern": "<(?!\\?|(?:area|base|br|col|frame|hr|html|img|input|keygen|link|menuitem|meta|param|source|track|wbr)\\b|[^>]*\\/>)([-_\\.A-Za-z0-9]+)(?=\\s|>)\\b[^>]*>(?!.*<\\/\\1>)|<!--(?!.*-->)|\\{[^}\"']*$|\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|else|elif)\\b(?!.*\\{%-?\\s*end)|\\{%-?\\s*set\\s+\\w+\\s*-?%\\}(?!.*\\{%-?\\s*endset)",
-		"decreaseIndentPattern": "^\\s*(<\\/(?!html)[-_\\.A-Za-z0-9]+\\b[^>]*>|-->|\\}|\\{%-?\\s*(?:end\\w+|else|elif)\\b)"
+		"increaseIndentPattern": "<(?!\\?|(?:area|base|br|col|frame|hr|html|img|input|keygen|link|menuitem|meta|param|source|track|wbr)\\b|[^>]*\\/>)([-_\\.A-Za-z0-9]+)(?=\\s|>)\\b[^>]*>(?!.*<\\/\\1>)|<!--(?!.*-->)|\\{[^}\"']*$|\\{%-?\\s*(?:if|for|block|macro|call|filter|raw|verbatim|asyncEach|asyncAll|switch|case|default|setAsync|renderTemplate|css|js|html|else|elif)\\b(?!.*\\{%-?\\s*end)|\\{%-?\\s*set\\s+\\w+\\s*-?%\\}(?!.*\\{%-?\\s*endset)",
+		"decreaseIndentPattern": "^\\s*(<\\/(?!html)[-_\\.A-Za-z0-9]+\\b[^>]*>|-->|\\}|\\{%-?\\s*(?:end\\w+|else|elif|case|default)\\b)"
 	}
 }

@@ -34,6 +34,15 @@
   block assignment
 {% endset %}
 {%- set trimmed = 1 -%}
+{% setAsync "rendered" %}
+  {% myAsyncShortcode %}
+{% endsetAsync %}
+{% switch status %}
+  {% case "draft" %}
+    draft
+  {% default %}
+    live
+{% endswitch %}
 {% image "cat.jpg", "A cat" %}
 {% mytag %}custom{% endmytag %}
 {%- if trimmed -%}whitespace{%- endif -%}

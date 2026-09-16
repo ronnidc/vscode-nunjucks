@@ -224,7 +224,7 @@
 				"3": {
 					"patterns": [
 						{
-							"match": "\\b(if|elif|else|endif)\\b",
+							"match": "\\b(if|elif|else|endif|switch|case|default|endswitch)\\b",
 							"name": "keyword.control.conditional.nunjucks"
 						},
 						{
@@ -238,6 +238,11 @@
 						{
 							"match": "\\b(block|endblock|macro|endmacro|call|endcall|filter|endfilter|set|endset|raw|endraw|verbatim|endverbatim)\\b",
 							"name": "keyword.control.nunjucks"
+						},
+						{
+							"comment": "Eleventy's async-safe variant of set, the one tag it adds to Nunjucks.",
+							"match": "\\b(setAsync|endsetAsync)\\b",
+							"name": "keyword.control.eleventy.nunjucks"
 						},
 						{
 							"comment": "Custom tags registered with addExtension, for example Eleventy shortcodes.",
