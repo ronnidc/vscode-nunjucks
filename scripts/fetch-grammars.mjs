@@ -1,6 +1,7 @@
 // Downloads the VS Code grammars that text.html.nunjucks includes (HTML, CSS,
-// JavaScript, YAML) so the grammar tests can tokenize embedded regions the way
-// VS Code does. The files are MIT licensed by Microsoft and are not committed.
+// JavaScript, JSON, YAML, Markdown) so the grammar tests can tokenize embedded
+// regions the way VS Code does. The files are MIT licensed by Microsoft and are
+// not committed.
 import { mkdir, writeFile, access } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -20,6 +21,7 @@ const grammars = {
 	"yaml-1.2.tmLanguage.json": `${base}/yaml/syntaxes/yaml-1.2.tmLanguage.json`,
 	"yaml-1.3.tmLanguage.json": `${base}/yaml/syntaxes/yaml-1.3.tmLanguage.json`,
 	"yaml-embedded.tmLanguage.json": `${base}/yaml/syntaxes/yaml-embedded.tmLanguage.json`,
+	"markdown.tmLanguage.json": `${base}/markdown-basics/syntaxes/markdown.tmLanguage.json`,
 };
 
 const dir = join("test", "grammar", "vendor");

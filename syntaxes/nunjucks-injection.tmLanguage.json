@@ -11,6 +11,18 @@
 			"include": "#raw"
 		},
 		{
+			"include": "#shortcode-css"
+		},
+		{
+			"include": "#shortcode-js"
+		},
+		{
+			"include": "#shortcode-markdown"
+		},
+		{
+			"include": "#shortcode-render-template"
+		},
+		{
 			"include": "#expression-block"
 		},
 		{
@@ -75,6 +87,242 @@
 				}
 			},
 			"contentName": "meta.embedded.block.raw.nunjucks",
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		},
+		"shortcode-css": {
+			"comment": "Eleventy's Bundle plugin collects styles with a paired css shortcode. The body is CSS with Nunjucks still injected, like a <style> block. The end tag is kept out of #tag with a lookahead there, because an L: injection would otherwise win the tie against this rule's end pattern.",
+			"begin": "(\\{%)(-)?\\s*(css)\\b((?:[^%]|%(?!\\}))*?)(-)?(%\\})",
+			"end": "(\\{%)(-)?\\s*(endcss)\\s*(-)?(%\\})",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "meta.embedded.tag.nunjucks",
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				"5": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"6": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"5": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"contentName": "meta.embedded.block.css.nunjucks",
+			"patterns": [
+				{
+					"include": "source.css"
+				}
+			]
+		},
+		"shortcode-js": {
+			"comment": "Same as #shortcode-css for the js shortcode.",
+			"begin": "(\\{%)(-)?\\s*(js)\\b((?:[^%]|%(?!\\}))*?)(-)?(%\\})",
+			"end": "(\\{%)(-)?\\s*(endjs)\\s*(-)?(%\\})",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "meta.embedded.tag.nunjucks",
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				"5": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"6": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"5": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"contentName": "meta.embedded.block.js.nunjucks",
+			"patterns": [
+				{
+					"include": "source.js"
+				}
+			]
+		},
+		"shortcode-markdown": {
+			"comment": "Eleventy's Render plugin: renderTemplate whose first argument names md, alone or in a comma list such as \"njk,md\", holds Markdown.",
+			"begin": "(\\{%)(-)?\\s*(renderTemplate)\\s+((?=[\"'](?:\\w+,)*md(?:,\\w+)*[\"'])(?:[^%]|%(?!\\}))*?)(-)?(%\\})",
+			"end": "(\\{%)(-)?\\s*(endrenderTemplate)\\s*(-)?(%\\})",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "meta.embedded.tag.nunjucks",
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				"5": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"6": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"5": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"contentName": "meta.embedded.block.markdown.nunjucks",
+			"patterns": [
+				{
+					"include": "text.html.markdown"
+				}
+			]
+		},
+		"shortcode-render-template": {
+			"comment": "renderTemplate in any other language (njk, liquid, html) keeps HTML highlighting. It needs its own rule only so that endrenderTemplate, which #tag skips, is still matched.",
+			"begin": "(\\{%)(-)?\\s*(renderTemplate)\\b((?:[^%]|%(?!\\}))*?)(-)?(%\\})",
+			"end": "(\\{%)(-)?\\s*(endrenderTemplate)\\s*(-)?(%\\})",
+			"beginCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "meta.embedded.tag.nunjucks",
+					"patterns": [
+						{
+							"include": "#expression"
+						}
+					]
+				},
+				"5": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"6": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "meta.embedded.tag.nunjucks"
+				},
+				"1": {
+					"name": "punctuation.definition.tag.begin.nunjucks"
+				},
+				"2": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"3": {
+					"name": "entity.name.tag.custom.nunjucks"
+				},
+				"4": {
+					"name": "keyword.operator.whitespace.nunjucks"
+				},
+				"5": {
+					"name": "punctuation.definition.tag.end.nunjucks"
+				}
+			},
+			"contentName": "meta.embedded.block.shortcode.nunjucks",
 			"patterns": [
 				{
 					"include": "text.html.basic"
@@ -211,8 +459,9 @@
 			]
 		},
 		"tag": {
+			"comment": "The lookahead leaves the end tags of the shortcode rules above to those rules, see #shortcode-css. A stray one without its opener is not highlighted.",
 			"name": "meta.embedded.tag.nunjucks",
-			"begin": "(\\{%)(-)?\\s*([A-Za-z_]\\w*)?",
+			"begin": "(\\{%)(?!-?\\s*end(?:css|js|renderTemplate)\\b)(-)?\\s*([A-Za-z_]\\w*)?",
 			"end": "(-)?(%\\})",
 			"beginCaptures": {
 				"1": {

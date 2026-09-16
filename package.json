@@ -90,7 +90,11 @@
 					"text.html.nunjucks"
 				],
 				"embeddedLanguages": {
-					"meta.embedded.block.raw.nunjucks": "html"
+					"meta.embedded.block.raw.nunjucks": "html",
+					"meta.embedded.block.shortcode.nunjucks": "html",
+					"meta.embedded.block.css.nunjucks": "css",
+					"meta.embedded.block.js.nunjucks": "javascript",
+					"meta.embedded.block.markdown.nunjucks": "markdown"
 				}
 			}
 		],
