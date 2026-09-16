@@ -2,7 +2,9 @@
 
 All notable changes to the Nunjucks extension are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.0.1] - 2026-09-16
+
+Eleventy support. Everything Eleventy adds on top of Nunjucks now gets the same editor behaviour as Nunjucks' own syntax.
 
 ### Added
 
@@ -10,6 +12,10 @@ All notable changes to the Nunjucks extension are documented here. The format fo
 - CSS, JavaScript and Markdown highlighting inside `{% css %}`, `{% js %}` and `{% renderTemplate "md" %}`, with Nunjucks still highlighted and comment toggling following the embedded language (#46).
 - Eleventy's universal filters (`url`, `slugify`, `log`, `getCollectionItem` and friends, `inputPathToUrl`, `renderTransforms`, `renderContent`) are coloured like Nunjucks' built-in filters (#47).
 - Snippets for `setAsync`, `switch`, the Render and Bundle plugin shortcodes, generic shortcodes and YAML, `---js` and `---json` front matter (#48).
+
+### Changed
+
+- The README screenshot is taken in VS Code's default Dark Modern theme, so it shows the colours a new install gets.
 
 ## [1.0.0] - 2026-09-15
 
@@ -61,6 +67,7 @@ A rewrite. The original grammar was a port of a Django grammar with a copy of an
 
 - First release: syntax highlighting ported from Sublime-nunjucks.
 
+[1.0.1]: https://github.com/ronnidc/vscode-nunjucks/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ronnidc/vscode-nunjucks/releases/tag/v1.0.0
 [0.3.1]: https://github.com/ronnidc/vscode-nunjucks/compare/0b37788...2c1d203
 [0.3.0]: https://github.com/ronnidc/vscode-nunjucks/commit/5d98a65

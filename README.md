@@ -31,7 +31,7 @@ Search for **Nunjucks** by ronnidc in the Extensions view, or run
 code --install-extension ronnidc.nunjucks
 ```
 
-VSCodium, Cursor, Windsurf and other Open VSX based editors: [open-vsx.org/extension/ronnidc/nunjucks](https://open-vsx.org/extension/ronnidc/nunjucks). The first Open VSX release is waiting for the `ronnidc` namespace to be handed over ([claim request](https://github.com/EclipseFdn/open-vsx.org/issues/13252)). Until then, download the `.vsix` from the [latest GitHub release](https://github.com/ronnidc/vscode-nunjucks/releases/latest) and install it with `code --install-extension nunjucks-1.0.0.vsix` or your editor's "Install from VSIX" command.
+VSCodium, Cursor, Windsurf and other Open VSX based editors: [open-vsx.org/extension/ronnidc/nunjucks](https://open-vsx.org/extension/ronnidc/nunjucks). The first Open VSX release is waiting for the `ronnidc` namespace to be handed over ([claim request](https://github.com/EclipseFdn/open-vsx.org/issues/13252)). Until then, download the `.vsix` from the [latest GitHub release](https://github.com/ronnidc/vscode-nunjucks/releases/latest) and install it with `code --install-extension nunjucks-1.0.1.vsix` or your editor's "Install from VSIX" command.
 
 ## File extensions
 

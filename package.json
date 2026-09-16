@@ -2,7 +2,7 @@
 	"name": "nunjucks",
 	"displayName": "Nunjucks",
 	"description": "Nunjucks templates in VS Code: syntax highlighting, HTML IntelliSense, Emmet, formatting and snippets",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "ronnidc",
 	"license": "MIT",
 	"icon": "images/vscode-nunjucks-extension-logo.png",
