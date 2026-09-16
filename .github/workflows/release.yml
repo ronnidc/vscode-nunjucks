@@ -29,7 +29,18 @@ jobs:
       - run: xvfb-run -a npm run test:integration
       - run: npx vsce package
       - name: Publish to Visual Studio Marketplace
-        run: npx vsce publish --packagePath *.vsix
+        # The gallery API now and then stops answering and the HTTP client
+        # gives up after a fixed three minutes (microsoft/vscode#336278), so
+        # try a few times. --skip-duplicate makes an attempt after one that
+        # did get through server-side a no-op, and lets a rerun of the job
+        # continue to Open VSX and the GitHub release after a manual upload.
+        run: |
+          for attempt in 1 2 3; do
+            npx vsce publish --packagePath *.vsix --skip-duplicate && exit 0
+            echo "::warning::vsce publish attempt $attempt failed, retrying in 60 seconds"
+            sleep 60
+          done
+          exit 1
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
@@ -41,7 +52,7 @@ jobs:
         continue-on-error: true
         run: |
           npx ovsx create-namespace ronnidc || true
-          npx ovsx publish *.vsix
+          npx ovsx publish *.vsix --skip-duplicate
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
       - name: GitHub release
