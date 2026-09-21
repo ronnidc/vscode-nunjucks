@@ -44,15 +44,11 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
-        # The namespace must exist before the first publish. Creating it is
-        # idempotent enough: the command fails when it already exists, which
-        # is the normal case, so its exit code is ignored. Open VSX is the
-        # secondary registry, so a failure here must not block the GitHub
-        # release; the step shows as failed and can be rerun on its own.
+        # Open VSX is the secondary registry, so a failure here must not block
+        # the GitHub release. The step shows as failed, and the version can be
+        # published afterwards with the open-vsx.yml workflow.
         continue-on-error: true
-        run: |
-          npx ovsx create-namespace ronnidc || true
-          npx ovsx publish *.vsix --skip-duplicate
+        run: npx ovsx publish *.vsix --skip-duplicate
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
       - name: GitHub release
