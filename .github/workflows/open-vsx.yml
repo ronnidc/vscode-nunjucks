@@ -1,0 +1,35 @@
+name: Publish release to Open VSX
+
+# Backfills a version that reached the Marketplace and GitHub but not Open VSX.
+# Rerunning the release run is no substitute: a rerun uses the workflow file
+# from the tag, and it would rebuild the package rather than ship the file
+# Marketplace users already have.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish, for example v1.0.1
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Download the .vsix from the GitHub release
+        run: gh release download "$TAG" --pattern "*.vsix"
+        env:
+          TAG: ${{ inputs.tag }}
+          GH_TOKEN: ${{ github.token }}
+      - run: npx ovsx publish *.vsix --skip-duplicate
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
