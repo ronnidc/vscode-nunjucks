@@ -33,6 +33,18 @@ code --install-extension ronnidc.nunjucks
 
 VSCodium, Cursor, Windsurf and other Open VSX based editors: [open-vsx.org/extension/ronnidc/nunjucks](https://open-vsx.org/extension/ronnidc/nunjucks).
 
+## Updating from 0.3.x
+
+If you have version 0.3.1 or older, VS Code does not install this update automatically. It shows this message and waits for you to update manually:
+
+> The update for Nunjucks extension introduces executable code, which is not present in the currently installed version.
+
+This is expected, and it happens once. Versions up to 0.3.1 were a grammar and snippets with no code. Version 1.0 added one small script, [`src/extension.js`](https://github.com/ronnidc/vscode-nunjucks/blob/main/src/extension.js), and VS Code asks for your consent whenever an extension goes from no code to some code.
+
+The script does one thing. When you open a Nunjucks file, it starts VS Code's built-in HTML language features, which VS Code otherwise starts only for HTML and Handlebars files. That is what gives you HTML completion, hover and formatting in `.njk` files. The script does not read your files, makes no network requests and has no dependencies. There is no build step, so the file in the published package is the file in the repository.
+
+Choose **Update** in the dialog. After that, new versions install automatically as before.
+
 ## File extensions
 
 `.njk`, `.nunjucks`, `.nunj` and `.nj` open as Nunjucks. The Nunjucks community and Eleventy use `.njk`.

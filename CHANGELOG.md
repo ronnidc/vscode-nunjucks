@@ -2,6 +2,16 @@
 
 All notable changes to the Nunjucks extension are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+> **Updating from 0.3.x?** VS Code asks you to review this update because it "introduces executable code". This is expected, and it happens once. Versions up to 0.3.1 contained no code, and version 1.0 added one small script, [`src/extension.js`](https://github.com/ronnidc/vscode-nunjucks/blob/main/src/extension.js). It starts VS Code's built-in HTML language features when you open a Nunjucks file, which is what gives you HTML completion, hover and formatting. It does not read your files, makes no network requests and has no dependencies. Choose **Update** to continue. The [README](https://github.com/ronnidc/vscode-nunjucks#updating-from-03x) has the details.
+
+## [1.0.2] - 2026-11-05
+
+No change to the extension itself. This release documents the prompt VS Code shows when you update from 0.3.x.
+
+### Added
+
+- A note at the top of this changelog and an "Updating from 0.3.x" section in the README, explaining why VS Code asks you to review the update and what the extension's code does (#55).
+
 ## [1.0.1] - 2026-09-16
 
 Eleventy support. Everything Eleventy adds on top of Nunjucks now gets the same editor behaviour as Nunjucks' own syntax.
@@ -67,6 +77,7 @@ A rewrite. The original grammar was a port of a Django grammar with a copy of an
 
 - First release: syntax highlighting ported from Sublime-nunjucks.
 
+[1.0.2]: https://github.com/ronnidc/vscode-nunjucks/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ronnidc/vscode-nunjucks/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ronnidc/vscode-nunjucks/releases/tag/v1.0.0
 [0.3.1]: https://github.com/ronnidc/vscode-nunjucks/compare/0b37788...2c1d203
