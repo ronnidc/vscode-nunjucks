@@ -3,13 +3,23 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  # A manual run releases nothing. It runs the verify-trusted-publishing job.
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   publish:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      # Lets vsce request the OIDC token that the Marketplace exchanges for a
+      # 15 minute credential (trusted publishing), so no publishing token is
+      # stored as a secret. The policy that trusts this repository and this
+      # workflow file is set up on the publisher's page on the Marketplace.
+      id-token: write
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -36,13 +46,11 @@ jobs:
         # continue to Open VSX and the GitHub release after a manual upload.
         run: |
           for attempt in 1 2 3; do
-            npx vsce publish --packagePath *.vsix --skip-duplicate && exit 0
+            npx vsce publish --oidc --packagePath *.vsix --skip-duplicate && exit 0
             echo "::warning::vsce publish attempt $attempt failed, retrying in 60 seconds"
             sleep 60
           done
           exit 1
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
         # Open VSX is the secondary registry, so a failure here must not block
         # the GitHub release. The step shows as failed, and the version can be
@@ -56,3 +64,37 @@ jobs:
         with:
           files: "*.vsix"
           generate_release_notes: true
+
+  # Proves that the Marketplace still trusts this workflow without waiting for
+  # a release to find out. The policy names this workflow file, so the check
+  # cannot live in a workflow of its own.
+  verify-trusted-publishing:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Stop unless this version is already on the Marketplace
+        # The publish command below is a no-op only for a version that is
+        # already published. Between a version bump on main and its tag it
+        # would release for real.
+        run: |
+          version=$(node -p "require('./package.json').version")
+          npx vsce show ronnidc.nunjucks --json > "$RUNNER_TEMP/marketplace.json"
+          published=$(node -p "require('$RUNNER_TEMP/marketplace.json').versions.some(v => v.version === '$version')")
+          if [ "$published" != "true" ]; then
+            echo "$version is not on the Marketplace yet, so this run would publish it. Release it with a tag instead."
+            exit 1
+          fi
+      - run: npx vsce package
+      - name: Sign in to the Marketplace without publishing
+        # vsce exchanges the OIDC token, reads the extension with the
+        # credential it gets back, and stops at "already published".
+        run: npx vsce publish --oidc --packagePath *.vsix --skip-duplicate
